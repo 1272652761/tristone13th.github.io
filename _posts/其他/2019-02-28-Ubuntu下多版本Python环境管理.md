@@ -1,5 +1,4 @@
 ---
-title:  "Ubuntu下多版本Python环境管理"
 categories: 其他
 ---
 
