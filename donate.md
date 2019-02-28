@@ -1,9 +1,12 @@
 ---
 layout: page
-title: About Me
-permalink: /about/
+title: Buy me a coffee
+permalink: /donate/
+
 ---
 
 Welcome to this website!
 
 > This website is created by
+
+ 
