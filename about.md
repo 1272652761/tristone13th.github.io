@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Welcome to this website!
+Welcome to this website and thanks for your attention!
 
 > This website is created by [Jekyll](http://jekyllcn.com/) using the Jekyll theme [EasyBook](https://github.com/laobubu/jekyll-theme-EasyBook) with the domain name provided by [Github Pages](https://pages.github.com/), **Thanks for their support!**
 
@@ -25,7 +25,3 @@ I like play billiard and always play it with my best friends though my playing t
 In addition to sports, I also like art very much. For an instance of literature,  `The Story of the Stone ` is my favorite Chinese novel and I regard it as the beauty and  pearl in the human history. The `Kun Opera` is also my favorite and I think it is a GIFT designed for my ears.
 
 Despite these, I have to say that the `Classical Chinese Language` is also in my favor list, 既见君子，云胡不喜？
-
-
-
-Thank you for your attention!
