@@ -29,11 +29,7 @@ Use `$$` to wrap your formulas. For example, `$$ e^{i\pi} + 1 = 0 $$` displays $
 Multi-line forumlas are supported too.
 
 $$
-\begin{aligned}
-& J(w, b) = \frac{1}{m} \sum_{i=1}^{m}L(\hat{y}^{(i)}, y^{(i)})
-+ \frac{\lambda}{2m} \sum_{l=1}^{L}{||w||}^2_F\\\\
-& {||w||}^2_F = \sum_{i = 1}^{n[l]}\sum_{j = 1}^{n[l-1]}(w_{ij})^2
-\end{aligned}
+\begin{aligned} \hat{Q}_{N}^{\pi}(s, a) &=\frac{1}{N} \sum_{n=1}^{N} G\left(\tau_{s_{0}=s, a_{0}=a}^{(n)}\right) \\ &=\frac{1}{N}\left(G\left(\tau_{s_{0}=s, a_{0}=a}^{(N)}\right)+\sum_{n=1}^{N-1} G\left(\tau_{s_{0}=s, a_{0}=a}^{(n)}\right)\right) \\ &=\frac{1}{N}\left(G\left(\tau_{s_{0}=s, a_{0}=a}^{(N)}\right)+(N-1) \hat{Q}_{N-1}^{\pi}(s, a)\right) \\ &=\hat{Q}_{N-1}^{\pi}(s, a)+\frac{1}{N}\left(G\left(\tau_{s_{0}=s, a_{0}=a}^{(N)}\right)-\hat{Q}_{N-1}^{\pi}(s, a)\right) \end{aligned}
 $$
 
 
