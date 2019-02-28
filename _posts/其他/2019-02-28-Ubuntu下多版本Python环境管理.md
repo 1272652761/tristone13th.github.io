@@ -1,7 +1,5 @@
 ---
-layout: post
 title:  "Ubuntu下多版本Python环境管理"
-date:   2019-02-28 16:18
 categories: 其他
 ---
 
