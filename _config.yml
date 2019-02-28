@@ -11,8 +11,8 @@ description: >
 author: 云中君
 avatar: "../img/avatar.jpg"
 profile: 既见君子，云胡不喜？
-#twitter_username: twitter_username
-github_username:  tristone13th
+# twitter_username: twitter_username
+# github_username:  tristone13th
 profile_links:
   GitHub: "https://github.com/tristone13th"
   # You can add more profile links above, or edit _includes/sidebar.html 

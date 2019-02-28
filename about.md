@@ -16,7 +16,7 @@ My name is Wang Lei and my nickname is `云中君`, I was born in `Handan City, 
 
 My github name is `tristone13th` and here is my github homepage: [tristone13th](https://github.com/tristone13th).
 
-My email is [tristone13th@outlook.com](tristone13th@outlook.com).
+My email is [tristone13th@outlook.com](https://outlook.live.com).
 
 ## Hobbies
 
