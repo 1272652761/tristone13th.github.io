@@ -6,11 +6,19 @@ permalink: /about/
 
 Welcome to this website!
 
+> This website is created by [Jekyll](http://jekyllcn.com/) using the Jekyll theme [EasyBook](https://github.com/laobubu/jekyll-theme-EasyBook) with the domain name provided by [Github Pages](https://pages.github.com/), **Thanks for their support!**
+
 # About Me
 
-My name is Wang Lei and my nickname is `云中君`、
+## Profile
 
-> This website is created by 
+My name is Wang Lei and my nickname is `云中君`, I was born in `Handan City, Hebei Province` and majored in `software engineering, Xidian university` in Xi'an. Now I'm working on my graduation project in `Fudan University, Shanghai`. My research direction is focus on computer network and welcome to have a deep communication with me!
+
+My github name is `tristone13th` and here is my github homepage: [tristone13th](https://github.com/tristone13th).
+
+My email is tristone13th@outlook.com.
+
+## Hobbies
 
 
 
