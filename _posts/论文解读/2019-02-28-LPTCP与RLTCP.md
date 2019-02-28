@@ -37,7 +37,7 @@ categories: 论文解读
 
 整个LPTCP设计的拓扑结构如下：
 
-![](img\LPTCP.png)
+![](../img\LPTCP.png)
 
 ### State
 
