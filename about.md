@@ -20,7 +20,7 @@ My email is tristone13th@outlook.com.
 
 ## Hobbies
 
-
+I like play billiard and always play it with my best friends though my playing technique is not so good, I am also focus on `Laliga`, the best football league in this world, 
 
 
 
