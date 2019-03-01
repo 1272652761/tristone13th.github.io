@@ -6,7 +6,7 @@ permalink: /about/
 
 Welcome to this website!
 
-> This website is created by [Jekyll](http://jekyllcn.com/) using the Jekyll theme [EasyBook](https://github.com/laobubu/jekyll-theme-EasyBook) with the domain name provided by [Github Pages](https://pages.github.com/), **Thanks for their support!**
+> This website is created by [Jekyll](http://jekyllcn.com/) using the Jekyll theme [EasyBook](https://github.com/laobubu/jekyll-theme-EasyBook) with the domain name provided by [Github Pages](https://pages.github.com/), **thanks for their support!**
 
 # About Me
 
