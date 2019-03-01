@@ -20,5 +20,13 @@ categories: 强化学习
 
 ## 训练过程
 
-假设从时刻 t 开始的回报
+假设从时刻$t$开始的回报$G\left(\tau_{t : T}\right)$，我们用下面公式计算。
+
+
+$$
+\hat{G}\left(\tau_{t : T}\right)=r_{t+1}+\gamma V_{\phi}\left(s_{t+1}\right)
+$$
+
+
+其中$s_{t+1}$是$t+1$时刻的状态，$r_{t+1}$是即时奖励。
 
