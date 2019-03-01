@@ -30,3 +30,30 @@ $$
 
 其中$s_{t+1}$是$t+1$时刻的状态，$r_{t+1}$是即时奖励。
 
+在每步更新中，分别进行策略函数$\pi_{\theta}(s,a)​$和值函数$V_{\phi}(s)​$的学习。一方面，更新参数$\phi​$使得值函数$V_{\phi}(s_{t})​$接近于估计的真实回报$\hat{G}\left(\tau_{t : T}\right)​$。
+
+
+$$
+\min _{\phi}\left(\hat{G}\left(\tau_{t : T}\right)-V_{\phi}\left(s_{t}\right)\right)^{2}
+$$
+
+
+另一方面，将**值函数**$V_{\phi}(s_{t})$作为基函数来更新**策略函数**的参数$\theta$，减少策略梯度的方差。
+
+
+$$
+\theta \leftarrow \theta+\alpha \gamma^{t}\left(\hat{G}\left(\tau_{t : T}\right)-V_{\phi}\left(s_{t}\right)\right) \frac{\partial}{\partial \theta} \log \pi_{\theta}\left(a_{t} | s_{t}\right)
+$$
+
+
+在每步更新中：
+
+- **演员**根据当前的环境状态$s$和策略$\pi_{\theta}(a | s)$去执行动作$a$，环境状态变为$s^{\prime}$，并到即时奖励$r$。
+- **评论员**根据环境给出的真实奖励和之前标准下的打分$\left(r+\gamma V_{\phi}\left(s^{\prime}\right)\right)$，来调整自己的打分标准，使得自己
+  的评分更接近环境的真实回报。
+- **演员**则跟据评论员的打分，调整自己的策略$\pi_{\theta}$，争取下次做得更好。
+
+开始训练时，演员随机表演，评论员随机打分。通过不断的学习，评论员的评分越来越准，演员的动作越来越好。
+
+# 通用算法框架：一个示例
+
