@@ -24,14 +24,6 @@ python --version
 sudo pip install virtualenvwrapper
 ```
 
-### 加速下载
-
-可以指定国内的镜像加速Python包的下载：
-
-```bash
-pip install virtualenvwrapper -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/
-```
-
 ## 对virtualenvwrapper进行配置
 
 在Linux中，`$HOME`代表`root`，我们首先在`root`下建立一个隐藏文件夹`.virtualenvs`。
