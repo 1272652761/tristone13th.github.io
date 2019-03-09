@@ -42,7 +42,7 @@ categories: Gym NS3
 
 - `sim.cc`：模拟的脚本，定义了网络的参数与结构，以及对脚本的执行。
 
-综上，在`RLTCP`相关的代码中，我们共声明并定义了11个类，这些类各有各的作用。其中，在源文件中实现了`TcpSocketDerived`,`TcpRlBase`,`TcpRl`,`TcpRlTimeBased`,`TcpGymEnv`,`TcpEventGymEnv`,`TcpTimeStepGymEnv`7个类。
+综上，在`RLTCP`相关的代码中，我们共声明并定义了11个类，这些类各有各的作用。其中，在源文件中实现了`TcpSocketDerived`, `TcpRlBase`, `TcpRl`, `TcpRlTimeBased`, `TcpGymEnv`, `TcpEventGymEnv`, `TcpTimeStepGymEnv` 7个类。
 
 ## 类继承关系
 
