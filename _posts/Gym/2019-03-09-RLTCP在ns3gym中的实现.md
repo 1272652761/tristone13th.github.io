@@ -53,3 +53,6 @@ categories: Gym NS3
   - `TcpGymEnv`
     - `TcpEventGymEnv`
     - `TcpTimeStepGymEnv`
+
+- `TcpCongestionOps`
+  - `TcpRlBase`
