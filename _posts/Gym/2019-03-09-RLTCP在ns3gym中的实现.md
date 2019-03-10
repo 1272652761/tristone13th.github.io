@@ -2,6 +2,8 @@
 categories: Gym NS3
 ---
 
+> 截止到目前为止，`RLTCP`仅仅发布了两个版本，后续还会进行更新。源代码地址为[ns3gym](https://github.com/tkn-tub/ns3-gym)。
+
 # 目录结构
 
 `RLTCP`位于目录`ns3-gym/scratch`下，共有8个源代码文件，除此之外，其还依赖于事先实现好的环境文件`Ns3Env`，用来和`NS3`脚本进行交互。
