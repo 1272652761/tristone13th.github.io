@@ -58,4 +58,6 @@ categories: RLTCP-IN-NS3GYM
 
 - `TcpCongestionOps`
   - `TcpRlBase`
+    - `TcpRl`
+    - `TcpRlTimeBased`
 
