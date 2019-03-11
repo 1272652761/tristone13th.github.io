@@ -80,7 +80,7 @@ TcpEventGymEnv::IncreaseWindow (Ptr<TcpSocketState> tcb, uint32_t segmentsAcked)
 - 新的慢启动阈值。
 - 新的拥塞窗口。
 
-可以通过直接设置**环境类的变量**来执行动作，因为后面`ns3`系统会读取这个值并进行修改，即
+可以通过直接设置**环境类的变量**来执行动作，因为上面两个函数在被触发后会读取这个值并进行修改，即
 
 ```c++
 bool
