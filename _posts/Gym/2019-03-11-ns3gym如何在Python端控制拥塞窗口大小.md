@@ -27,7 +27,7 @@ Config::SetDefault ("ns3::TcpL4Protocol::SocketType",
 
 ## GetSsThresh
 
-这个函数不能设置当前`socket`连接的状态，因为传进来的参数是`const`的，当探测到一个丢包时，会发送一个不需要我们手动进行更改。
+这个函数不能设置当前`socket`连接的状态，因为传进来的参数是`const`的，当探测到一个丢包时，系统会自动执行这个函数，然后将该函数的**返回值**设置为新的**慢启动阈值**。
 
 ## IncreaseWindow
 
@@ -80,4 +80,17 @@ TcpEventGymEnv::IncreaseWindow (Ptr<TcpSocketState> tcb, uint32_t segmentsAcked)
 - 新的慢启动阈值。
 - 新的拥塞窗口。
 
-可以通过直接设置环境类的变量来执行动作，因为后面ns3系统会读取这个值并进行修改
+可以通过直接设置**环境类的变量**来执行动作，因为后面`ns3`系统会读取这个值并进行修改，即
+
+```c++
+bool
+TcpGymEnv::ExecuteActions (Ptr<OpenGymDataContainer> action)
+{
+  Ptr<OpenGymBoxContainer<uint32_t>> box = DynamicCast<OpenGymBoxContainer<uint32_t>> (action);
+  m_new_ssThresh = box->GetValue (0);
+  m_new_cWnd = box->GetValue (1);
+  NS_LOG_INFO ("MyExecuteActions: " << action);
+  return true;
+}
+```
+
