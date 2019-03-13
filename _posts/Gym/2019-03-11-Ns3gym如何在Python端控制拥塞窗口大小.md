@@ -1,5 +1,6 @@
 ---
 categories: Gym NS3
+title: Ns3gym如何在Python端控制拥塞窗口大小
 ---
 
 如果我们希望`Agent`能够针对其对于环境的观测`Observation`做出动作`Action`，并进一步对环境做出影响。比如，我们要动态地调整拥塞窗口的大小，那么可以通过以下方式进行实现：

@@ -1,5 +1,6 @@
 ---
 categories: 其他
+title: Ubuntu下多版本Python环境管理
 ---
 
 # virtualenvwrapper库的安装与配置

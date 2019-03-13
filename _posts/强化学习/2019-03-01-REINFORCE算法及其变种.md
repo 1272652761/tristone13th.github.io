@@ -1,5 +1,6 @@
 ---
 categories: 强化学习
+title: REINFORCE算法及其变种
 ---
 
 # $REINFORCE$算法

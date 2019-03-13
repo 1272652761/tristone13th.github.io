@@ -1,5 +1,6 @@
 ---
 categories: NS3
+title: BulkSendApplication内置类
 ---
 
 顾名思义，英语中`Bulk`的意思是成块的，大批的，所以`BulkSendApplication`表示极尽所能地向链路中发送流量。

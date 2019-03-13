@@ -1,5 +1,6 @@
 ---
 categories: 其他
+title: VSCode中Pylint报错的问题
 ---
 
 VSCode中Python扩展的默认代码审查工具是Pylint，由于其推断系统是静态的，而有些调用需要动态生成，因此其有时会触发报错。

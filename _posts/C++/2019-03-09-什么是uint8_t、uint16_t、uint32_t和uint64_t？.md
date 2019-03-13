@@ -1,5 +1,6 @@
 ---
 categories: C++
+title: 什么是uint8_t、uint16_t、uint32_t和uint64_t？
 ---
 
 事实证明它们分别等于：`unsigned char`、`unsigned short`、`unsigned int`和`unsigned long long`。
