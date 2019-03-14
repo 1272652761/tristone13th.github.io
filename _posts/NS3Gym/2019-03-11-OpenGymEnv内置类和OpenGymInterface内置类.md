@@ -51,9 +51,9 @@ title: OpenGymEnv内置类和OpenGymInterface内置类
 
 ### void Notify()
 
-调用类中变量保存的接口`m_openGymInterface`的`Notify`函数。
+调用类中变量保存的接口`m_openGymInterface`的`Notify`函数。这个函数将当前的一些状态通知给`Agent`，这些状态包括**当前观测值**、**当前回报**、**是否游戏结束**、**额外信息**。
 
 ### void NotifySimulationEnd()
 
-调用类中变量保存的接口`m_openGymInterface`的`NotifySimulationEnd`函数。
+调用类中变量保存的接口`m_openGymInterface`的`NotifySimulationEnd`函数。通知`Agent`模拟结束。
 
