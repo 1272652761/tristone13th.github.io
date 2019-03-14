@@ -47,13 +47,13 @@ title: OpenGymEnv内置类和OpenGymInterface内置类
 
 ### void SetOpenGymInterface(Ptr<OpenGymInterface> openGymInterface)
 
-设定接口，传入一个`OpenGymInterface`类，根据这个类进行设定。
+设定接口，传入一个`OpenGymInterface`类，将变量`m_openGymInterface`设为该类，根据这个类进行设定。
 
 ### void Notify()
 
-
+调用类中变量保存的接口`m_openGymInterface`的`Notify`函数。
 
 ### void NotifySimulationEnd()
 
-
+调用类中变量保存的接口`m_openGymInterface`的`NotifySimulationEnd`函数。
 
