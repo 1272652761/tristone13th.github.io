@@ -121,5 +121,29 @@ virtual std::string GetName () const = 0;
                                    const TcpSocketState::TcpCongState_t newState)
 ```
 
+# CwndEvent
 
+简单来说，当拥塞窗口事件发生时，触发计算、事件。
+
+这个函数有两个参数，第一个为当前内部的拥塞状态，第二个为触发这个函数的事件。
+
+官方给出的解释如下：
+
+```c++
+  /**
+   * \brief Trigger events/calculations on occurrence congestion window event
+   *
+   * This function mimics the function cwnd_event in Linux.
+   * The function is called in case of congestion window events.
+   *
+   * \param tcb internal congestion state
+   * \param event the event which triggered this function
+   */
+  virtual void CwndEvent (Ptr<TcpSocketState> tcb,
+                          const TcpSocketState::TcpCAEvent_t event)
+  {
+    NS_UNUSED (tcb);
+    NS_UNUSED (event);
+  }
+```
 
