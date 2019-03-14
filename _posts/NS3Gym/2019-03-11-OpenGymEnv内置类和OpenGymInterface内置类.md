@@ -45,3 +45,15 @@ title: OpenGymEnv内置类和OpenGymInterface内置类
 |    `GetExtraInfo`     | 得到多余信息 |    `std::string`多余信息    |
 |   `ExecuteActions`    |   执行动作   |     `bool`是否执行成功      |
 
+### void SetOpenGymInterface(Ptr<OpenGymInterface> openGymInterface)
+
+设定接口，传入一个`OpenGymInterface`类，根据这个类进行设定。
+
+### void Notify()
+
+
+
+### void NotifySimulationEnd()
+
+
+
