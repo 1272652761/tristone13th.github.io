@@ -9,15 +9,15 @@ title: OpenGymEnv内置类和OpenGymInterface内置类
 
 ## Public
 
-### OpenGymEnv ()
+### `OpenGymEnv ()`
 
 构造函数。
 
-### virtual ~OpenGymEnv ()
+### `virtual ~OpenGymEnv ()`
 
 析构函数。**基类的析构函数之所以是虚函数**是因为在实现多态时，当基类操作派生类，在析构时防止只析构基类而不析构派生类的状况发生。
 
-### static TypeId GetTypeId ()
+### `static TypeId GetTypeId ()`
 
 返回这个类的`TypeId`，之所以是静态的是因为要操作静态成员变量。
 
@@ -45,15 +45,31 @@ title: OpenGymEnv内置类和OpenGymInterface内置类
 |    `GetExtraInfo`     | 得到多余信息 |    `std::string`多余信息    |
 |   `ExecuteActions`    |   执行动作   |     `bool`是否执行成功      |
 
-### void SetOpenGymInterface(Ptr<OpenGymInterface> openGymInterface)
+### `void SetOpenGymInterface(Ptr<OpenGymInterface> openGymInterface)`
 
 设定接口，传入一个`OpenGymInterface`类，将变量`m_openGymInterface`设为该类，根据这个类进行设定。
 
-### void Notify()
+### `void Notify()`
 
 调用类中变量保存的接口`m_openGymInterface`的`Notify`函数。这个函数将当前的一些状态通知给`Agent`，这些状态包括**当前观测值**、**当前回报**、**是否游戏结束**、**额外信息**。
 
-### void NotifySimulationEnd()
+### `void NotifySimulationEnd()`
 
 调用类中变量保存的接口`m_openGymInterface`的`NotifySimulationEnd`函数。通知`Agent`模拟结束。
+
+## Protected
+
+### `virtual void DoInitialize (void);`
+
+初始化。
+
+### `virtual void DoDispose (void);`
+
+部署。
+
+### `Ptr<OpenGymInterface> m_openGymInterface;`
+
+成员变量，这个成员变量是一个和`OpenGym`的接口。
+
+# OpenGymInterface
 
