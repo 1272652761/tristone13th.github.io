@@ -36,7 +36,7 @@ virtual std::string GetName () const = 0;
 
 这个函数保证了拥塞控制状态会在调用这个方法之前就得到了改变。
 
-实现者应当返回慢启动阈值（并不是直接改变它）。
+**实现者应当返回慢启动阈值（并不是直接改变它），后面的函数会将返回的慢启动阈值调整为新的慢启动阈值。**
 
 ```c++
   /**
@@ -76,6 +76,49 @@ virtual std::string GetName () const = 0;
    * \param segmentsAcked count of segments acked
    */
   virtual void IncreaseWindow (Ptr<TcpSocketState> tcb, uint32_t segmentsAcked) = 0;
+```
+
+# PktsAcked
+
+简单来说，这个函数是关于对于接收到的`ACK`的一些计时的信息。
+
+当接收到一个`ACK`时，并且包含计时信息。这个函数是可选的，即拥塞控制可以选择不去实现它，默认的实现什么都不去做。官方给出的解释如下：
+
+```c++
+  /**
+   * \brief Timing information on received ACK
+   *
+   * The function is called every time an ACK is received (only one time
+   * also for cumulative ACKs) and contains timing information. It is
+   * optional (congestion controls can not implement it) and the default
+   * implementation does nothing.
+   *
+   * \param tcb internal congestion state
+   * \param segmentsAcked count of segments acked
+   * \param rtt last rtt
+   */
+  virtual void PktsAcked (Ptr<TcpSocketState> tcb, uint32_t segmentsAcked,
+                          const Time& rtt)
+```
+
+# CongestionStateSet
+
+简单来说，这个函数用来切换状态。
+
+官方给出的解释如下：
+
+```c++
+  /**
+   * \brief Trigger events/calculations specific to a congestion state
+   *
+   * This function mimics the function set_state in Linux.
+   * The function is called before changing congestion state.
+   *
+   * \param tcb internal congestion state
+   * \param newState new congestion state to which the TCP is going to switch
+   */
+  virtual void CongestionStateSet (Ptr<TcpSocketState> tcb,
+                                   const TcpSocketState::TcpCongState_t newState)
 ```
 
 
