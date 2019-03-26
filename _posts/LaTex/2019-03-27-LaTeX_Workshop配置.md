@@ -88,3 +88,30 @@ LaTex Workshop是一个VSCode上的插件，用来支持LaTex相关操作，其�
 - `name`：工具名称，在后面`recipes`中会进行引用。
 - `command`：命令，该工具执行的命令。
 - `args`：执行命令带的参数。
+
+# 编译菜单
+
+```json
+{
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        },
+    ],
+}
+```
+
+这个菜单决定了编译的顺序。
+
+# 预览同步
+
+```json
+{
+    "latex-workshop.synctex.afterBuild.enabled": true,
+}
+```
+
+允许在编译后预览的PDF文件定向到tex文件中上次更改的位置。
