@@ -22,11 +22,22 @@ LaTex Workshop是一个VSCode上的插件，用来支持LaTex相关操作，其�
                 "%DOC%"
             ]
         },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
     ],
+
     "latex-workshop.latex.recipes": [
         {
-            "name": "xelatex",
+            "name":  "xelatex ➞ bibtex ➞ xelatex`×2",
             "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
                 "xelatex"
             ]
         },
@@ -81,6 +92,13 @@ LaTex Workshop是一个VSCode上的插件，用来支持LaTex相关操作，其�
                 "%DOC%"
             ]
         },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
     ],
 }
 ```
@@ -91,14 +109,19 @@ LaTex Workshop是一个VSCode上的插件，用来支持LaTex相关操作，其�
 - `command`：命令，该工具执行的命令。
 - `args`：执行命令带的参数。
 
+这里设置了两个编译工具，一个是`xelatex`用来编译.tex文件，另一个是`bibtex`用来编译参考文献文件.bib。
+
 # 编译菜单
 
 ```json
 {
     "latex-workshop.latex.recipes": [
         {
-            "name": "xelatex",
+            "name":  "xelatex ➞ bibtex ➞ xelatex`×2",
             "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
                 "xelatex"
             ]
         },
@@ -106,7 +129,7 @@ LaTex Workshop是一个VSCode上的插件，用来支持LaTex相关操作，其�
 }
 ```
 
-这个菜单决定了编译的顺序。
+这个菜单决定了编译的顺序。这样设置的原因是首先编译源文件，然后编译参考文献文件，第三次编译源文件构成新的参考文献，最后一次编译源文件来保证编号的正确性。
 
 # 预览同步
 
