@@ -1,5 +1,5 @@
 ---
-categories: LaTex
+categories: LaTeX
 title: LaTeX Workshop配置
 ---
 
