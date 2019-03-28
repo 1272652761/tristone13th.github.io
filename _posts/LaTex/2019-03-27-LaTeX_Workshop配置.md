@@ -9,7 +9,7 @@ LaTex Workshop是一个VSCode上的插件，用来支持LaTex相关操作，其�
 
 ```json
 {
-    "latex-workshop.latex.autoClean.run": "onFailed",
+    "latex-workshop.latex.autoClean.run": "never",
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.latex.tools": [
         {
@@ -40,7 +40,7 @@ LaTex Workshop是一个VSCode上的插件，用来支持LaTex相关操作，其�
 中间文件可能需要自动清理，这便可以通过以下代码进行配置：
 
 ```json
-{"latex-workshop.latex.autoClean.run": "onFailed"}
+{"latex-workshop.latex.autoClean.run": "never"}
 ```
 
 其值有三种，分别为：
@@ -48,6 +48,8 @@ LaTex Workshop是一个VSCode上的插件，用来支持LaTex相关操作，其�
 - `never`：表示从不清理
 - `onFailed`：当编译失败时清理
 - ``onBuilt`：当编译后（无论成功或者失败）都进行清理。
+
+一般将其设置为`never`，因为我们有时会用到bibtex与.aux文件来进行参考文献的编译。
 
 # 预览
 
