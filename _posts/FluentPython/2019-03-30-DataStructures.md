@@ -25,4 +25,59 @@ Container sequences保存着对于其中元素的引用，这些引用能够是�
 
 **递推式列表**（List Comprehension）和**生成器表达式**（generator expression）都是很快速的构建一个序列的方式。
 
-递推式列表可以简写为listcomp，
+### 递推式列表
+
+递推式列表可以简写为Listcomp。
+
+#### 递推式列表改进
+
+在原来的Python2的版本中，递推式列表有一个很大的缺陷，如下：
+
+```python
+Python 2.7.6 (default, Mar 22 2014, 22:59:38)
+[GCC 4.8.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> x = 'my precious'
+>>> dummy = [x for x in 'ABC']
+>>> x
+'C'
+```
+
+在这个例子中，`x`的值被更改了。
+
+而在`Python3`中，递推式列表和生成器表达式有了自己的本地域，就像函数一样。而且本地的变量不会掩盖外部的变量。如下：
+
+```python
+>>> x = 'ABC'
+>>> dummy = [ord(x) for x in x]
+>>> x
+'ABC'
+>>> dummy
+[65, 66, 67]
+```
+
+### 生成器表达式
+
+生成器表达式可以简写为Genexp。
+
+生成器表达式和递推式列表使用了相同的语法，**但是它是包含在圆括号中而非方括号中**。
+
+**Genexp的优点在于更加节省内存**，因为它使用迭代器协议一个又一个地向外yield元素，而不是直接建立一个列表。
+
+```python
+>>> symbols = '$¢£¥€¤'
+>>> tuple(ord(symbol) for symbol in symbols)
+(36, 162, 163, 165, 8364, 164)
+>>> import array
+>>> array.array('I', (ord(symbol) for symbol in symbols))
+array('I', [36, 162, 163, 165, 8364, 164])
+```
+
+如果它是一个函数调用中单一的参数，那就没有必要再写冗余的括号了，**就像上面代码中的第二行**。
+
+### 元组不只是不可更改的列表
+
+元组不只是不可更改的列表，它还可以是没有域名的纪录。
+
+#### 作为纪录的元组
+
