@@ -210,3 +210,196 @@ $28.00 Panavise Jr. - PV-201
 $34.95 PiTFT Mini Kit 320x240
 ```
 
+### 对切片赋值
+
+可更改的序列可以通过切片来更改，可以直接使用赋值，代码如下：
+
+```python 
+>>> l = list(range(10))
+>>> l
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> l[2:5] = [20, 30]
+>>> l
+[0, 1, 20, 30, 5, 6, 7, 8, 9]
+>>> del l[5:7]
+>>> l
+[0, 1, 20, 30, 5, 8, 9]
+>>> l[3::2] = [11, 22]
+>>> l
+[0, 1, 20, 11, 5, 22, 9]
+>>> l[2:5] = 100
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+TypeError: can only assign an iterable
+>>> l[2:5] = [100]
+>>> l
+[0, 1, 100, 22, 9]
+```
+
+## 对列表使用操作符
+
+对于乘号，我们可以使用下面的代码进行测验：
+
+```python
+>>> l = [1, 2, 3]
+>>> l * 5
+[1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]
+>>> 5 * 'abcd'
+'abcdabcdabcdabcdabcd'
+```
+
+对于加号，可以使用下面的代码进行测验：
+
+```python
+>>> a = [1, 2]
+>>> b = [3, 4]
+>>> print(a + b)
+[1, 2, 3, 4]
+```
+
+不管是加号还是乘号，都会直接创造出一个新对象，并且不会更改它们的参数。
+
+### 构建列表的列表（大雾）
+
+有时候我们需要使用固定数量的嵌套列表初始化一个列表，比如下面这个例子：
+
+```python
+>>> board = [['_'] * 3 for i in range(3)]
+>>> board
+[['_', '_', '_'], ['_', '_', '_'], ['_', '_', '_']]
+>>> board[1][2] = 'X'
+>>> board
+[['_', '_', '_'], ['_', '_', 'X'], ['_', '_', '_']]
+```
+
+一个错误的用法是：
+
+```python
+>>> weird_board = [['_'] * 3] * 3
+>>> weird_board
+[['_', '_', '_'], ['_', '_', '_'], ['_', '_', '_']]
+>>> weird_board[1][2] = 'O'
+>>> weird_board
+[['_', '_', 'O'], ['_', '_', 'O'], ['_', '_', 'O']]
+```
+
+另一个错误的用法是：
+
+```python
+row = ['_'] * 3
+board = []
+for i in range(3):
+	board.append(row)
+```
+
+正确的用法是：
+
+```python
+>>> board = []
+>>> for i in range(3):
+... 	row = ['_'] * 3 #
+... 	board.append(row)
+...
+>>> board
+[['_', '_', '_'], ['_', '_', '_'], ['_', '_', '_']]
+>>> board[2][0] = 'X'
+>>> board #
+[['_', '_', '_'], ['_', '_', '_'], ['X', '_', '_']]
+```
+
+## 序列增广赋值
+
+符号`+=`和符号`*=`表现非常不同，下面开始讨论：
+
+能够让`+=`运行的特殊函数是`__iadd__`，然而，如果`__iadd__`没有被实现，Python会转而调用函数`__add__`，考虑下面的表达式：
+
+```python
+>>> a += b
+```
+
+如果a实现了`__iadd__`方法，那么它就会被调用。如果没有，那么会按照`a = a + b`来调用`a + b`，这将会创造一个新的对象并赋予a。请看下面这个例子：
+
+```python
+>>> l = [1, 2, 3]
+>>> id(l)
+4311953800
+>>> l *= 2
+>>> l
+[1, 2, 3, 1, 2, 3]
+>>> id(l)
+4311953800
+>>> t = (1, 2, 3)
+>>> id(t)
+4312681568
+>>> t *= 2
+>>> id(t)
+4301348296
+```
+
+### +=赋值谜题
+
+下面让我们来讨论元组不可变中的奥秘。
+
+```python
+>>> t = (1, 2, [30, 40])
+>>> t[2] += [50, 60]
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+>>> t
+(1, 2, [30, 40, 50, 60])
+```
+
+简单来说，第一步赋值成功了，第二次写回的赋值失败了。
+
+## 排序内置函数
+
+```python
+>>> fruits = ['grape', 'raspberry', 'apple', 'banana']
+>>> sorted(fruits)
+['apple', 'banana', 'grape', 'raspberry']
+>>> fruits
+['grape', 'raspberry', 'apple', 'banana']
+>>> sorted(fruits, reverse=True)
+['raspberry', 'grape', 'banana', 'apple']
+>>> sorted(fruits, key=len)
+['grape', 'apple', 'banana', 'raspberry']
+>>> sorted(fruits, key=len, reverse=True)
+['raspberry', 'banana', 'grape', 'apple']
+>>> fruits
+['grape', 'raspberry', 'apple', 'banana']
+>>> fruits.sort()
+>>> fruits
+['apple', 'banana', 'grape', 'raspberry']
+```
+
+使用sorted函数会创造一个新的对象，而使用内置的sort()函数会直接进行内置的排序。
+
+## 管理排好序的序列
+
+`bisect`模块提供两个主要的函数：`bisect`和`insort`。
+
+### 使用bisect搜索
+
+`bisect(haystack, needle)`对`needle`在`haystack`中进行一次查找，后者必须是一个有序序列。
+
+这个函数不止可以用作搜索，也可以用作插入：
+
+```python
+import bisect
+import random
+SIZE = 7
+random.seed(1729)
+my_list = []
+for i in range(SIZE):
+    new_item = random.randrange(SIZE*2)
+    bisect.insort(my_list, new_item)
+    print('%2d ->' % new_item, my_list)
+```
+
+我们看到的这么多应用在列表中的其实也应用于其他序列类型。
+
+## 当不只是列表
+
+### 数组（Arrays）
+
