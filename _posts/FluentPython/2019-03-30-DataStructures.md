@@ -450,3 +450,45 @@ deque([40, 30, 20, 10, 3, 4, 5, 6, 7, 8], maxlen=10)
 
 注意，这上面的`rotate`函数，表示将所有元素向后移动，`appendleft`函数表示在左边增加一个元素，`extend`表示从右边扩展队列，`extendleft`表示从左边拓展队列。
 
+# 字典和集合
+
+## 通用映射类型
+
+### 什么是可哈希
+
+一个对象是可哈希的，如果它有一个在它生命周期内从不改变的哈希值（它需要一个`__hash__()`方法），并且能够和其他对象比较（需要一个`__eq__()`方法）。两个比较相同的对象，也一定有相同的哈希值。
+
+所有的原子不可变类型（str, bytes, numeric types）都是可哈希的。一个元组是可哈希的只有当它的所有元素是可哈希的。请看下面这个例子：
+
+```python
+>>> tt = (1, 2, (30, 40))
+>>> hash(tt)
+8027212646858338501
+>>> tl = (1, 2, [30, 40])
+>>> hash(tl)
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'
+>>> tf = (1, 2, frozenset([30, 40]))
+>>> hash(tf)
+-4118419923444501110
+```
+
+用户自定义的类型都是可哈希的，因为它们的哈希值是`id()`值。如果一个对象实现了`__eq__`，那么当它所有属性都是不可更改的时，它才是可哈希的。请看下面这个例子：
+
+```python 
+>>> a = dict(one=1, two=2, three=3)
+>>> b = {'one': 1, 'two': 2, 'three': 3}
+>>> c = dict(zip(['one', 'two', 'three'], [1, 2, 3]))
+>>> d = dict([('two', 2), ('one', 1), ('three', 3)])
+>>> e = dict({'three': 3, 'one': 1, 'two': 2})
+>>> a == b == c == d == e
+True
+```
+
+## dict comprehensions
+
+
+
+
+
