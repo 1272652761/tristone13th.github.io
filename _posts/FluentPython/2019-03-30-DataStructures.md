@@ -403,3 +403,50 @@ for i in range(SIZE):
 
 ### 数组（Arrays）
 
+```python
+>>> from array import array
+>>> from random import random
+>>> floats = array('d', (random() for i in range(10**7)))
+>>> floats[-1]
+0.07802343889111107
+>>> fp = open('floats.bin', 'wb')
+>>> floats.tofile(fp)
+>>> fp.close()
+>>> floats2 = array('d')
+>>> fp = open('floats.bin', 'rb')
+>>> floats2.fromfile(fp, 10**7)
+>>> fp.close()
+>>> floats2[-1]
+0.07802343889111107
+>>> floats2 == floats
+True
+```
+
+### Deques and other queues
+
+Deque代表双向队列，请看下面代码：
+
+```python
+>>> from collections import deque
+>>> dq = deque(range(10), maxlen=10)
+>>> dq
+deque([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], maxlen=10)
+>>> dq.rotate(3)
+>>> dq
+deque([7, 8, 9, 0, 1, 2, 3, 4, 5, 6], maxlen=10)
+>>> dq.rotate(-4)
+>>> dq
+deque([1, 2, 3, 4, 5, 6, 7, 8, 9, 0], maxlen=10)
+>>> dq.appendleft(-1)
+>>> dq
+deque([-1, 1, 2, 3, 4, 5, 6, 7, 8, 9], maxlen=10)
+>>> dq.extend([11, 22, 33])
+>>> dq
+deque([3, 4, 5, 6, 7, 8, 9, 11, 22, 33], maxlen=10)
+>>> dq.extendleft([10, 20, 30, 40])
+>>> dq
+deque([40, 30, 20, 10, 3, 4, 5, 6, 7, 8], maxlen=10)
+```
+
+注意，这上面的`rotate`函数，表示将所有元素向后移动，`appendleft`函数表示在左边增加一个元素，`extend`表示从右边扩展队列，`extendleft`表示从左边拓展队列。
+
