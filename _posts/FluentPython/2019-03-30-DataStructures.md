@@ -458,7 +458,7 @@ deque([40, 30, 20, 10, 3, 4, 5, 6, 7, 8], maxlen=10)
 
 一个对象是可哈希的，如果它有一个在它生命周期内从不改变的哈希值（它需要一个`__hash__()`方法），并且能够和其他对象比较（需要一个`__eq__()`方法）。两个比较相同的对象，也一定有相同的哈希值。
 
-所有的原子不可变类型（str, bytes, numeric types）都是可哈希的。一个元组是可哈希的只有当它的所有元素是可哈希的。请看下面这个例子：
+**所有的原子不可变类型（str, bytes, numeric types）都是可哈希的。**一个元组tuple是可哈希的只有当它的所有元素是可哈希的。请看下面这个例子：
 
 ```python
 >>> tt = (1, 2, (30, 40))
@@ -488,7 +488,139 @@ True
 
 ## dict comprehensions
 
+从Python2.7之后，关于递推式列表（listcomps）和生成器表达式（genexps）被应用到了递推式字典（dictcomp）中（递推式集合），请看下面的例子：
 
+```python
+>>> DIAL_CODES = [
+... (86, 'China'),
+... (91, 'India'),
+... (1, 'United States'),
+... (62, 'Indonesia'),
+... (55, 'Brazil'),
+... (92, 'Pakistan'),
+... (880, 'Bangladesh'),
+... (234, 'Nigeria'),
+... (7, 'Russia'),
+... (81, 'Japan'),
+... ]
+>>> country_code = {country: code for code, country in DIAL_CODES}
+>>> country_code
+{'China': 86, 'India': 91, 'Bangladesh': 880, 'United States': 1,
+'Pakistan': 92, 'Japan': 81, 'Russia': 7, 'Brazil': 55, 'Nigeria':
+234, 'Indonesia': 62}
+>>> {code: country.upper() for country, code in country_code.items()
+... if code < 66}
+{1: 'UNITED STATES', 55: 'BRAZIL', 62: 'INDONESIA', 7: 'RUSSIA'}
+```
 
+上面这个代码将键值对进行了反转，然后又反转了回来。在语法上，递推式字典和递推式列表的区别是外边那层从圆括号变成了大括号。
 
+## 使用`setdefault`函数
+
+换一句话说，以下两段代码是等价的：
+
+```python
+my_dict.setdefault(key, []).append(new_value)
+```
+
+```python
+if key not in my_dict:
+	my_dict[key] = []
+	my_dict[key].append(new_value)
+```
+
+有时，在搜索丢失的键时，使用返回一些虚构值的映射是很方便的。
+
+## 有灵活的键的映射
+
+### defaultdict
+
+以下代码使用了`collections.defaultdict`来提供另一种优雅的解决方案，这种解决方案能够处理当无法查找到键值时的情况。
+
+```python
+import sys
+import re
+import collections
+WORD_RE = re.compile('\w+')
+
+index = collections.defaultdict(list)
+
+with open(sys.argv[1], encoding='utf-8') as fp:
+	for line_no, line in enumerate(fp, 1):
+		for match in WORD_RE.finditer(line):
+			word = match.group()
+			column_no = match.start()+1
+			location = (line_no, column_no)
+			index[word].append(location)
+# print in alphabetical order
+for word in sorted(index, key=str.upper):
+	print(word, index[word])
+```
+
+在以上代码中创建了一个默认值为list的defaultdict，当键为空时，首先创建一个空的列表对象。
+
+### `__missing__`
+
+映射处理丢失键的方式的基础是一个恰当的名称为`__missing__`的方法。这个方法并没有定义在基类dict中，但是这个类能够感知到这个方法的存在，当这个类的子类中提供了一个这个方法之后，标准的`dict.__getitem__`会在一个键未被找到时调用这个函数，而不是报错。
+
+## 集合理论
+
+集合类型set和他的不可更改的兄弟类型frozenset首先在2.3中出现，但是最后正式在python2.6中引进。
+
+集合是一系列单一元素的集合，一个最基本的用法是用来移除相同元素。
+
+```python
+>>> l = ['spam', 'spam', 'eggs', 'spam']
+>>> set(l)
+{'eggs', 'spam'}
+>>> list(set(l))
+['eggs', 'spam']
+```
+
+集合中的元素必须是可哈希的，集合类型不可哈希，但是frozenset类型可哈希。所以你可以将frozenset类型置于一个set中。
+
+一些基础的集合运算被实现了出来。给定两个集合a和b，a | b返回它们的并集，但是a & b返回它们的交集。a - b返回它们的差集。
+
+### 递推式集合（Set Comprehensions）
+
+请看下面的代码：
+
+```python
+>>> from unicodedata import name
+>>> {chr(i) for i in range(32, 256) if 'SIGN' in name(chr(i),'')}
+{'§', '=', '¢', '#', '¤', '<', '¥', 'μ', '×', '$', '¶', '£', '©',
+'°', '+', '÷', '±', '>', '¬', '®', '%'}
+```
+
+递推式集合和递推式字典的区别是，虽然两者在外面都使用了大括号，但是递推式集合只需要每次迭代一个元素，而递推式字典需要每次迭代一个键值对。
+
+## 字典和集合的本来面目
+
+理解Python中字典和集合如何通过哈希表来计算是有用的，这样有优点也有缺点。
+
+这里有一些接下来需要回答的问题：
+
+- Python中字典和集合的效率如何。
+- 它们为什么是**无序**的。
+- 为什么我们不能使用一个Python对象作为一个字典的键或者集合的元素？
+- 为什么字典和集合中的顺序依赖于插入的顺序，且会随着结构的生命周期而改变？
+- 为什么遍历时向其中添加元素是不好的？
+
+### 字典中的哈希表
+
+这是一个高级的视角，关于Python如何通过一个哈希表来实现一个字典。
+
+哈希表是一个稀疏数组，即总是有空单元格的数组。在标准的数据结构中，哈希表中的单元格通常称为“bucket”。在dict的哈希表中，每个项都有一个bucket，它包含两个字段：对键的引用以及对值的引用。因为所有的桶都有相同的大小，所以我们可以直接通过偏移量来访问一个桶。
+
+Python试图保持至少1/3的桶是空的；如果哈希表变得过于拥挤，则将其复制到一个新位置，以便有空间容纳更多的bucket。
+
+要将项放入哈希表中，第一步是计算项键的哈希值，这是使用hash()内置函数完成的，接下来将进行解释。
+
+#### 散列和等价性
+
+内置函数hash()直接与内置类型一起工作，而对于用户自定义类型，则调用`__hash__`。
+
+如果两个对象比较相等，它们的哈希值也必须相等，否则哈希表算法将不起作用。例如，因为1 == 1.0为真，所以hash(1) == hash(1.0)也必须为真，即使int和float的内部表示形式非常不同。
+
+#### 哈希表算法
 
