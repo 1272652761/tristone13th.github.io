@@ -734,3 +734,52 @@ b'1K\xce\xa9'
 
 ## 理解编码解码问题
 
+### UnicodeEncodeError
+
+大多数非UTF的编码都仅仅能够处理Unicode的一个很小的子集。当将文本转化为字节时，如果在目标编码中没有定义这个字符，那么将会报出UnicodeEncodeError错误。请看下面的例子：
+
+```Python
+>>> city = 'São Paulo'
+>>> city.encode('utf_8')
+b'S\xc3\xa3o Paulo'
+>>> city.encode('utf_16')
+b'\xff\xfeS\x00\xe3\x00o\x00 \x00P\x00a\x00u\x00l\x00o\x00'
+>>> city.encode('iso8859_1')
+b'S\xe3o Paulo'
+>>> city.encode('cp437')
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+File "/.../lib/python3.4/encodings/cp437.py", line 12, in encode
+return codecs.charmap_encode(input,errors,encoding_map)
+UnicodeEncodeError: 'charmap' codec can't encode character '\xe3' in
+position 1: character maps to <undefined>
+>>> city.encode('cp437', errors='ignore')
+b'So Paulo'
+>>> city.encode('cp437', errors='replace')
+b'S?o Paulo'
+>>> city.encode('cp437', errors='xmlcharrefreplace')
+b'S&#227;o Paulo'
+```
+
+### UnicodeDecodeError
+
+并不是每一个字节都有有效的ASCII字符，并不是每一个字节序列对UTF-8 or UTF-16都有效。许多传统的八位编码不能够解码字节流。**你无法直接判断一个字节序列到底是什么编码**。
+
+## Handling text files
+
+处理文本的最佳实践是Unicode三明治。如下：
+
+![](../../img/UnicodeSandwich.png)
+
+当打开一个文本文件，这个文本文件被处理成为字符串，当关闭时，被处理成为字节序列。
+
+Python2使用系统默认的编码，这将会导致不必要的错误；而Python3默认使用UTF-8编码，使得这种错误不再发生。
+
+```python
+>>> open('cafe.txt', 'w', encoding='utf_8').write('café')
+4
+>>> open('cafe.txt').read()
+'cafÃ©'
+```
+
+全章完。
