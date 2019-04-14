@@ -10,9 +10,6 @@ permalink: /category/
   <ul class="post-list">
     {% capture categories %}{% for category in site.categories %}{{ category | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
     {% assign category = categories | split:',' | sort %}
-    <div>
-      <p>{{categories}}</p>
-    </div>
     {% for item in (0..site.categories.size) %}{% unless forloop.last %}
     {% capture word %}{{ category[item] | strip_newlines }}{% endcapture %}
     <h2 class="category" id="{{ word }}">{{ word }}</h2>
