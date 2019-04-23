@@ -53,8 +53,8 @@ $oc-gray-9: map-get($oc-gray-list, "9");
 $base-color: $oc-gray-8;
 $base-lighten-color: $oc-gray-6;
 $tag-index-label-color: $base-color;
-$tag-index-label-background-color: $oc-gray-2;
-$tag-index-count-background-color: $oc-gray-3;
+$tag-index-label-background-color: $oc-gray-4;
+$tag-index-count-background-color: $oc-gray-5;
 
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
