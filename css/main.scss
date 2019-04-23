@@ -80,9 +80,9 @@ $tag-index-count-background-color: $oc-gray-5;
 
 // Tags
 .tags > .label {
-    > li:before {
-      content: "";
-    }
+    // > li:before {
+    //   content: "";
+    // }
   
     > li {
       margin: 0;
