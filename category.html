@@ -6,7 +6,46 @@ permalink: /category/
 
 <div class="home">
   <h1 class="page-heading">Category</h1>
-  
+
+
+
+
+
+
+
+
+
+  <div class="tags">
+    <ul class="label">
+      {% for tag in site.categories %}
+      <li>
+        <a href="#{{ tag[0] }}">
+          <span>{{ tag[0] }}</span>
+          <span class="count">{{ tag[1] | size }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <ul class="post-list">
     {% capture categories %}{% for category in site.categories %}{{ category | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
     {% assign category = categories | split:',' | sort %}
