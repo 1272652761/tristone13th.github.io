@@ -1,36 +1,21 @@
---- # Only the main Sass file needs front matter (the dashes are enough) --- @charset "utf-8";
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
 
-$base-font-family: "Open Sans",
-"Helvetica Neue",
-"DejaVu Sans",
-Arial,
-"PingFang SC",
-"Noto Sans CJK SC",
-"Hiragino Sans GB",
-"微软雅黑",
-Helvetica,
-sans-serif;
-$base-font-size: 16px;
-$small-font-size: $base-font-size * 0.875;
+$base-font-family: "Open Sans", "Helvetica Neue", "DejaVu Sans", Arial, "PingFang SC", "Noto Sans CJK SC", "Hiragino Sans GB", "微软雅黑",  Helvetica, sans-serif;
+$base-font-size:   16px;
+$small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
-$code-font-family: Menlo,
-Monaco,
-Consolas,
-"DejaVu Sans Mono",
-"Liberation Mono",
-"文泉驿等宽微米黑",
-"Courier New",
-Courier,
-SimSun,
-monospace;
-$code-font-size: 15px;
+$code-font-family:   Menlo, Monaco, Consolas, "DejaVu Sans Mono", "Liberation Mono", "文泉驿等宽微米黑", "Courier New", Courier, SimSun, monospace;
+$code-font-size:     15px;
 
 // Width of the content area
-$content-width: 800px;
+$content-width:    800px;
 
-$on-palm: 600px;
-$on-laptop: 800px;
+$on-palm:          600px;
+$on-laptop:        800px;
 
 $color-link: #036;
 $color-link-hover: #069;
@@ -41,16 +26,18 @@ $header-link: #CFD8DC;
 $header-fg: #FFF;
 
 // color
-$oc-gray-list: ("0": #f8f9fa,
-"1": #f1f3f5,
-"2": #e9ecef,
-"3": #dee2e6,
-"4": #ced4da,
-"5": #adb5bd,
-"6": #868e96,
-"7": #495057,
-"8": #343a40,
-"9": #212529);
+$oc-gray-list: (
+  "0": #f8f9fa,
+  "1": #f1f3f5,
+  "2": #e9ecef,
+  "3": #dee2e6,
+  "4": #ced4da,
+  "5": #adb5bd,
+  "6": #868e96,
+  "7": #495057,
+  "8": #343a40,
+  "9": #212529
+);
 
 $oc-gray-0: map-get($oc-gray-list, "0");
 $oc-gray-1: map-get($oc-gray-list, "1");
@@ -78,11 +65,12 @@ $tag-index-count-background-color: $oc-gray-5;
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import "base",
-"animate",
-"layout",
-"syntax-highlighting",
-"easybook"
+@import
+        "base",
+        "animate",
+        "layout",
+        "syntax-highlighting",
+        "easybook"
 ;
 
 
@@ -91,50 +79,46 @@ $tag-index-count-background-color: $oc-gray-5;
 
 
 // Tags
-.tags {
-    margin-bottom: 0
-}
-
-.tags>.label {
+.tags > .label {
     // > li:before {
     //   content: "";
     // }
-
-    >li {
-        margin: 0;
-        font-size: $base-font-size;
-        font-weight: 500;
-        display: inline;
-
-        >a {
-            display: inline-block;
-            margin: 1px;
-            color: $tag-index-label-color;
-            background-color: $tag-index-label-background-color;
-            border-radius: 3px;
-
-            span {
-                float: left;
-                padding: .5px 5px;
-
-                &.count {
-                    background-color: $tag-index-count-background-color;
-                    border-radius: 0 3px 3px 0;
-                }
-            }
+  
+    > li {
+      margin: 0;
+      font-size: $base-font-size;
+      font-weight: 500;
+      display: inline;
+  
+      > a {
+        display: inline-block;
+        margin: 1px;
+        color: $tag-index-label-color;
+        background-color: $tag-index-label-background-color;
+        border-radius: 3px;
+  
+        span {
+          float: left;
+          padding: .5px 5px;
+  
+          &.count {
+            background-color: $tag-index-count-background-color;
+            border-radius: 0 3px 3px 0;
+          }
         }
+      }
     }
-}
-
-.tags>.tag {
+  }
+  
+  .tags > .tag {
     a {
-        color: $base-color;
+      color: $base-color;
     }
-
     time {
-        color: $base-lighten-color;
-        font-size: $small-font-size;
-        font-weight: 300;
-        margin-left: 3px;
+      color: $base-lighten-color;
+      font-size: $small-font-size;
+      font-weight: 300;
+      margin-left: 3px;
     }
-}
+  }
+  
