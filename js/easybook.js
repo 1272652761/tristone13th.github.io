@@ -17,24 +17,39 @@ function TOCize(toc, content, matchHeightTo) {
     }
 
     var aniscroll = {
+
+        // 设置变量target为t参数op，并每间隔20ms运行tick函数
         to: function (top) {
             aniscroll.target = top;
             if (aniscroll.running) return;
-            aniscroll.running = setInterval(aniscroll.tick, 20);
+            aniscroll.running = setInterval(aniscroll.tick, 2000);
         },
+
         target: 0,
         running: 0,
+
+        // 得到 文档从顶部开始滚动过的像素值
         getTop: function () {
+
+            // 文档从顶部开始滚动过的像素值/前者的别名/前者的别名
             return window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
         },
+
+        // 滚到该坐标value
         setTop: function (value) {
+
+            // 滚到文档中的某一个坐标
             (window['scrollTo'] && window.scrollTo(window.scrollX, value))
         },
+
+        // 
         tick: function () {
             var oldST = aniscroll.getTop(), newST = ~~((oldST + aniscroll.target) / 2);
             aniscroll.setTop(newST);
             if (aniscroll.getTop() < newST || Math.abs(newST - aniscroll.target) < 10) {
                 aniscroll.setTop(aniscroll.target);
+
+                // 取消由 setInterval() 设置的 timeout
                 clearInterval(aniscroll.running)
                 aniscroll.running = 0
             }
