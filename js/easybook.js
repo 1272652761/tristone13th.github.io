@@ -18,20 +18,10 @@ function TOCize(toc, content, matchHeightTo) {
 
     var aniscroll = {
 
-        // 设置变量target为t参数op，并每间隔20ms运行tick函数
-        // to: function (top) {
-        //     aniscroll.target = top;
-        //     if (aniscroll.running) return;
-        //     aniscroll.running = setInterval(aniscroll.tick, 20);
-        // },
-
+        // 转移到top
         to: function (top) {
-            aniscroll.target = top;
-            aniscroll.setTop(aniscroll.target)
+            aniscroll.setTop(top)
         },
-
-        target: 0,
-        running: 0,
 
         // 得到 文档从顶部开始滚动过的像素值
         getTop: function () {
@@ -46,19 +36,6 @@ function TOCize(toc, content, matchHeightTo) {
             // 滚到文档中的某一个坐标
             (window['scrollTo'] && window.scrollTo(window.scrollX, value))
         },
-
-        // 
-        tick: function () {
-            var oldST = aniscroll.getTop(), newST = ~~((oldST + aniscroll.target) / 2);
-            aniscroll.setTop(newST);
-            if (aniscroll.getTop() < newST || Math.abs(newST - aniscroll.target) < 10) {
-                aniscroll.setTop(aniscroll.target);
-
-                // 取消由 setInterval() 设置的 timeout
-                clearInterval(aniscroll.running)
-                aniscroll.running = 0
-            }
-        }
     }
 
     function scrollToHeader(header, hash, ev) {
@@ -146,36 +123,36 @@ function TOCize(toc, content, matchHeightTo) {
     toc.appendChild(uls[0]);
     toc.style.display = 'block';
 
-    var maxHeightTOC = '';
-    var ppc = document.querySelector('.col-main');
-    var header_placeholder = document.querySelector('.header-placeholder');
-    var s1 = function () {
-        var scrollTop = aniscroll.getTop(), dummyClientTop = scrolldummy.getBoundingClientRect().top - header_placeholder.offsetHeight,
-            margin = 10, c, d; // c = dummyHeight, d = TOC.maxHeight (+'px')
-        if ((c = -dummyClientTop + margin) < 0) c = 0;
-        if (c) {
-            var wh = window.innerHeight
-                || document.documentElement.clientHeight
-                || document.body.clientHeight,
-                cbox = matchHeightTo.getBoundingClientRect(),
-                vq = cbox.bottom - dummyClientTop - uls[0].offsetHeight;
-            if (c > vq) c = vq;
-            d = (wh - (margin << 1)) + 'px';
-        } else {
-            d = "";
-        }
-        if (d != maxHeightTOC) { //status lock.
-            maxHeightTOC = d;
-            if (d) {
-                uls[0].setAttribute('style', 'max-height:' + d + '; width:' + (toc.offsetWidth - 20) + "px");
-            } else {
-                uls[0].setAttribute("style", "");
-            }
-        }
-        scrolldummy.style.height = (c + 'px');
-    };
-    window.addEventListener('scroll', s1, false);
-    window.addEventListener('resize', s1, false);
+    // var maxHeightTOC = '';
+    // var ppc = document.querySelector('.col-main');
+    // var header_placeholder = document.querySelector('.header-placeholder');
+    // var s1 = function () {
+    //     var scrollTop = aniscroll.getTop(), dummyClientTop = scrolldummy.getBoundingClientRect().top - header_placeholder.offsetHeight,
+    //         margin = 10, c, d; // c = dummyHeight, d = TOC.maxHeight (+'px')
+    //     if ((c = -dummyClientTop + margin) < 0) c = 0;
+    //     if (c) {
+    //         var wh = window.innerHeight
+    //             || document.documentElement.clientHeight
+    //             || document.body.clientHeight,
+    //             cbox = matchHeightTo.getBoundingClientRect(),
+    //             vq = cbox.bottom - dummyClientTop - uls[0].offsetHeight;
+    //         if (c > vq) c = vq;
+    //         d = (wh - (margin << 1)) + 'px';
+    //     } else {
+    //         d = "";
+    //     }
+    //     if (d != maxHeightTOC) { //status lock.
+    //         maxHeightTOC = d;
+    //         if (d) {
+    //             uls[0].setAttribute('style', 'max-height:' + d + '; width:' + (toc.offsetWidth - 20) + "px");
+    //         } else {
+    //             uls[0].setAttribute("style", "");
+    //         }
+    //     }
+    //     scrolldummy.style.height = (c + 'px');
+    // };
+    // window.addEventListener('scroll', s1, false);
+    // window.addEventListener('resize', s1, false);
 }
 
 function PalmSidebar() {
