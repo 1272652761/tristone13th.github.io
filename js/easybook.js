@@ -127,7 +127,7 @@ function TOCize(toc, content, matchHeightTo) {
     var maxHeightTOC = '';
     var ppc = document.querySelector('.col-main');
     var header_placeholder = document.querySelector('.header-placeholder');
-    window.alert(header_placeholder)
+    window.alert(header_placeholder.offsetHeight)
     var s1 = function () {
 
         // getBoundingClientRect用于获得页面中某个元素的左，上，右和下分别相对浏览器视窗的位置。
