@@ -19,10 +19,15 @@ function TOCize(toc, content, matchHeightTo) {
     var aniscroll = {
 
         // 设置变量target为t参数op，并每间隔20ms运行tick函数
+        // to: function (top) {
+        //     aniscroll.target = top;
+        //     if (aniscroll.running) return;
+        //     aniscroll.running = setInterval(aniscroll.tick, 20);
+        // },
+
         to: function (top) {
             aniscroll.target = top;
-            if (aniscroll.running) return;
-            aniscroll.running = setInterval(aniscroll.tick, 2000);
+            aniscroll.setTop(aniscroll.target)
         },
 
         target: 0,
