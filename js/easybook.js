@@ -123,36 +123,37 @@ function TOCize(toc, content, matchHeightTo) {
     toc.appendChild(uls[0]);
     toc.style.display = 'block';
 
-    // var maxHeightTOC = '';
-    // var ppc = document.querySelector('.col-main');
-    // var header_placeholder = document.querySelector('.header-placeholder');
-    // var s1 = function () {
-    //     var scrollTop = aniscroll.getTop(), dummyClientTop = scrolldummy.getBoundingClientRect().top - header_placeholder.offsetHeight,
-    //         margin = 10, c, d; // c = dummyHeight, d = TOC.maxHeight (+'px')
-    //     if ((c = -dummyClientTop + margin) < 0) c = 0;
-    //     if (c) {
-    //         var wh = window.innerHeight
-    //             || document.documentElement.clientHeight
-    //             || document.body.clientHeight,
-    //             cbox = matchHeightTo.getBoundingClientRect(),
-    //             vq = cbox.bottom - dummyClientTop - uls[0].offsetHeight;
-    //         if (c > vq) c = vq;
-    //         d = (wh - (margin << 1)) + 'px';
-    //     } else {
-    //         d = "";
-    //     }
-    //     if (d != maxHeightTOC) { //status lock.
-    //         maxHeightTOC = d;
-    //         if (d) {
-    //             uls[0].setAttribute('style', 'max-height:' + d + '; width:' + (toc.offsetWidth - 20) + "px");
-    //         } else {
-    //             uls[0].setAttribute("style", "");
-    //         }
-    //     }
-    //     scrolldummy.style.height = (c + 'px');
-    // };
-    // window.addEventListener('scroll', s1, false);
-    // window.addEventListener('resize', s1, false);
+    // 这部分保持sidebar能够也能够移动到特定的位置
+    var maxHeightTOC = '';
+    var ppc = document.querySelector('.col-main');
+    var header_placeholder = document.querySelector('.header-placeholder');
+    var s1 = function () {
+        var scrollTop = aniscroll.getTop(), dummyClientTop = scrolldummy.getBoundingClientRect().top - header_placeholder.offsetHeight,
+            margin = 10, c, d; // c = dummyHeight, d = TOC.maxHeight (+'px')
+        if ((c = -dummyClientTop + margin) < 0) c = 0;
+        if (c) {
+            var wh = window.innerHeight
+                || document.documentElement.clientHeight
+                || document.body.clientHeight,
+                cbox = matchHeightTo.getBoundingClientRect(),
+                vq = cbox.bottom - dummyClientTop - uls[0].offsetHeight;
+            if (c > vq) c = vq;
+            d = (wh - (margin << 1)) + 'px';
+        } else {
+            d = "";
+        }
+        if (d != maxHeightTOC) { //status lock.
+            maxHeightTOC = d;
+            if (d) {
+                uls[0].setAttribute('style', 'max-height:' + d + '; width:' + (toc.offsetWidth - 20) + "px");
+            } else {
+                uls[0].setAttribute("style", "");
+            }
+        }
+        scrolldummy.style.height = (c + 'px');
+    };
+    window.addEventListener('scroll', s1, false);
+    window.addEventListener('resize', s1, false);
 }
 
 function PalmSidebar() {
