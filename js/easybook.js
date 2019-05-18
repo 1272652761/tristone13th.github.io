@@ -72,18 +72,32 @@ function TOCize(toc, content, matchHeightTo) {
 
     var hs = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
     var cul = null, plevel = 1;
+
+    // ul：无序列表
+    // ol：有序列表
+    // li：列表中的项目
     var uls = [make('ul')];
+
+    // 对于选中的每一个标题进行操作，结果为生成一个uls，其中放置结构已完全定义的无序列表
     for (var i = 0; i < hs.length; i++) {
+
+        // 得到该标题的缩进等级
         var level = +hs[i].tagName.substr(1);
         var hi = hs[i];
         var ti = make('li');
+
+        // 根据当前标题生成点击链接
         ti.appendChild(generateLink(hi));
         if (plevel < level) {
             do {
                 uls.push(make('ul'));
+
+                // 将这一个无序列表作为上一个无序列表的子列表，直到保存的缩进与当前缩进相等
                 uls[uls.length - 2].appendChild(uls[uls.length - 1]);
             } while (++plevel < level);
         } else if (plevel > level) {
+
+            // 当当前缩进大于或者小于保存的缩进时，说明正在执行的这一个已经生成完毕
             do {
                 cul = uls.pop();
             } while (--plevel > level);
@@ -91,9 +105,15 @@ function TOCize(toc, content, matchHeightTo) {
         cul = uls[uls.length - 1];
         cul.appendChild(ti);
     }
+
+    // 
     while (true) {
+
+        // chs是list类型，用来保存这个无序列表所有的孩子元素
         var chs = uls[0].children;
         if (chs.length == 1 && chs[0].tagName == 'UL')
+
+            // 移除uls的第一个元素
             uls.shift();
         else
             break;
@@ -223,6 +243,7 @@ function RealLoad() {
     PalmSidebar();
     SelectAllize("pre.highlight", "Dblclick to select all");
 
+    // imgs is a list
     var imgs = document.querySelectorAll('.post-content > p > img');
     for (var i = imgs.length; i--;) {
         if (imgs[i].parentElement.childNodes.length === 1) {
