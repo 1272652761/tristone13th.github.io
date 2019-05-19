@@ -131,7 +131,7 @@ function TOCize(toc, content, matchHeightTo) {
 
         // getBoundingClientRect用于获得页面中某个元素的左，上，右和下分别相对浏览器视窗的位置。
         // offsetHeight 返回该元素的像素高度
-        var dummyClientTop = scrolldummy.getBoundingClientRect().top - header_placeholder.offsetHeight,
+        var dummyClientTop = scrolldummy.getBoundingClientRect().top,  // - header_placeholder.offsetHeight,
             margin = 10, c, d; // c = dummyHeight, d = TOC.maxHeight (+'px') scrollTop = aniscroll.getTop(), 
         if ((c = -dummyClientTop + margin) < 0) c = 0;
         if (c) {
