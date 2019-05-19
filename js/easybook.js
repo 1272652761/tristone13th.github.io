@@ -131,19 +131,22 @@ function TOCize(toc, content, matchHeightTo) {
 
         // getBoundingClientRect用于获得页面中某个元素的左，上，右和下分别相对浏览器视窗的位置。
         // offsetHeight 返回该元素的像素高度
-        var dummyClientTop = scrolldummy.getBoundingClientRect().top,  // - header_placeholder.offsetHeight,
+        var dummyClientTop = scrolldummy.getBoundingClientRect().top - header_placeholder.offsetHeight,
             margin = 10, c, d; // c = dummyHeight, d = TOC.maxHeight (+'px') scrollTop = aniscroll.getTop(), 
+
+        // c = -dummyClientTop + margin使其保持相对的静止
         if ((c = -dummyClientTop + margin) < 0) c = 0;
         if (c) {
-
             // 返回窗口的文档显示区的高度。
             var wh = window.innerHeight
                 || document.documentElement.clientHeight
-                || document.body.clientHeight,
+                || document.body.clientHeight;
 
-                // col_main
-                cbox = matchHeightTo.getBoundingClientRect(),
-                vq = cbox.bottom - dummyClientTop - uls[0].offsetHeight;
+            // col_main
+            var cbox = matchHeightTo.getBoundingClientRect();
+
+            // vq的出现是防止滑动到最底下的情况
+            var vq = cbox.bottom - dummyClientTop - uls[0].offsetHeight;
             if (c > vq) c = vq;
             d = (wh - (margin << 1)) + 'px';
         } else {
