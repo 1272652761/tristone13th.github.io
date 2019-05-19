@@ -152,14 +152,14 @@ function TOCize(toc, content, matchHeightTo) {
         if (d != maxHeightTOC) { //status lock.
             maxHeightTOC = d;
             if (d) {
-                uls[0].setAttribute('style', 'max-height:' + d + '; width:' + (toc.offsetWidth - 20) + "px");
+                uls[0].setAttribute('style', 'max-height:' + "50" + '; width:' + (toc.offsetWidth - 20) + "px");
             } else {
                 uls[0].setAttribute("style", "");
             }
         }
 
-        // 设置该DIV的高度
-        scrolldummy.style.height = (100 + 'px');
+        // 设置该DIV的高度，scrolldummy是toc和items之间的一个空白块，用来填充
+        scrolldummy.style.height = (c + 'px');
     };
 
     window.addEventListener('scroll', s1, false);
