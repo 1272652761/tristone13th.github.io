@@ -152,7 +152,7 @@ function TOCize(toc, content, matchHeightTo) {
         if (d != maxHeightTOC) { //status lock.
             maxHeightTOC = d;
             if (d) {
-                uls[0].setAttribute('style', 'max-height:' + "50" + '; width:' + (toc.offsetWidth - 20) + "px");
+                uls[0].setAttribute('style', 'max-height:' + "50px" + '; width:' + (toc.offsetWidth - 20) + "px");
             } else {
                 uls[0].setAttribute("style", "");
             }
