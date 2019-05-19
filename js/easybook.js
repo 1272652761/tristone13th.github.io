@@ -188,6 +188,7 @@ function PalmSidebar() {
         is_palm_mode = getComputedStyle(header).position !== 'static';
         header_placeholder.style.height = is_palm_mode ? (h.bottom - h.top + 'px') : '0px'
     }
+
     function toggleSidebar(e) {
         if (/expand-sidebar/.test(pcw.className)) {
             pcw.className = pcw.className.replace(/\s*expand-sidebar\s*/, ' ');
@@ -196,8 +197,9 @@ function PalmSidebar() {
             pcw.className += " expand-sidebar";
             header.className += " expand-sidebar";
         }
-        setTimeout(s1, 200);
+        setTimeout(s1, 2000);
     }
+
     s1();
     document.getElementById('sidebar-toggle').addEventListener('click', toggleSidebar, false);
     window.addEventListener('resize', s1, false);
