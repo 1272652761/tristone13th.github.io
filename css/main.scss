@@ -80,9 +80,9 @@ $tag-index-count-background-color: $oc-gray-5;
 
 // Tags
 .tags{
+  margin-top: 0px;
   margin-bottom: 0px;
-  border-color: #036;
-  border:5px solid red;
+  padding: 0%;
 }
 
 .tags > .label {
