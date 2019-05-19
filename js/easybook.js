@@ -125,19 +125,23 @@ function TOCize(toc, content, matchHeightTo) {
 
     // 这部分保持sidebar能够也能够移动到特定的位置
     var maxHeightTOC = '';
-    var ppc = document.querySelector('.col-main');
+    // var ppc = document.querySelector('.col-main');
     var header_placeholder = document.querySelector('.header-placeholder');
-    window.alert(header_placeholder.offsetHeight)
     var s1 = function () {
 
         // getBoundingClientRect用于获得页面中某个元素的左，上，右和下分别相对浏览器视窗的位置。
-        var scrollTop = aniscroll.getTop(), dummyClientTop = scrolldummy.getBoundingClientRect().top - header_placeholder.offsetHeight,
-            margin = 10, c, d; // c = dummyHeight, d = TOC.maxHeight (+'px')
+        // offsetHeight 返回该元素的像素高度
+        var dummyClientTop = scrolldummy.getBoundingClientRect().top - header_placeholder.offsetHeight,
+            margin = 10, c, d; // c = dummyHeight, d = TOC.maxHeight (+'px') scrollTop = aniscroll.getTop(), 
         if ((c = -dummyClientTop + margin) < 0) c = 0;
         if (c) {
+
+            // 返回窗口的文档显示区的高度。
             var wh = window.innerHeight
                 || document.documentElement.clientHeight
                 || document.body.clientHeight,
+
+                // col_main
                 cbox = matchHeightTo.getBoundingClientRect(),
                 vq = cbox.bottom - dummyClientTop - uls[0].offsetHeight;
             if (c > vq) c = vq;
@@ -153,7 +157,9 @@ function TOCize(toc, content, matchHeightTo) {
                 uls[0].setAttribute("style", "");
             }
         }
-        scrolldummy.style.height = (c + 'px');
+
+        // 设置该DIV的高度
+        scrolldummy.style.height = (100 + 'px');
     };
 
     window.addEventListener('scroll', s1, false);
