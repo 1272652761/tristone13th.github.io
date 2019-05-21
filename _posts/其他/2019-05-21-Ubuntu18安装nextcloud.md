@@ -32,3 +32,7 @@ snap install nextcloud
 ![](../../img/nextcloud20190521.png)
 
 在其中填入相关信息即完成服务端配置。
+
+# 在Ubuntu环境下安装Client版本
+
+进入软件商店，查找nextcloud-client，找到官方发布的安装即可。
