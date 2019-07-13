@@ -1,6 +1,6 @@
 ---
-categories: FluentPython
-title: Data Structures
+categories: Python
+title: FluentPython - Data Structures
 ---
 
 # 序列

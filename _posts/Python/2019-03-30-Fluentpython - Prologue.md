@@ -1,6 +1,6 @@
 ---
-categories: FluentPython
-title: Prologue
+categories: Python
+title: Fluentpython - Prologue
 ---
 
 # Python数据模型

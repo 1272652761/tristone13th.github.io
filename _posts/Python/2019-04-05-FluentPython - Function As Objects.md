@@ -1,6 +1,6 @@
 ---
-categories: FluentPython
-title: Data Structures
+categories: Python
+title: FluentPython - Function As Objects
 ---
 
 # 头等对象的函数
