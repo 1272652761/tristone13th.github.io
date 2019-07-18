@@ -7,6 +7,10 @@
  * This is just a extension for my theme.
  */
 
+
+ /*
+
+ */
 function TOCize(toc, content, matchHeightTo) {
     if (!(toc && content && matchHeightTo)) return false
 
@@ -53,22 +57,24 @@ function TOCize(toc, content, matchHeightTo) {
         }
     }
 
+    // 生成链接，传入的参数h代表要生成连接的标题对象
     var generateLink = function (h) {
-        var q = make('a');
-        cnt++;
-        var hash = h.getAttribute('id');
-        if (!hash) {
+        var link = make('a'); // 创建一个链接 
+        cnt++; // 保持hash值不冲突
+        var hash = h.getAttribute('id'); // 根据id生成哈希
+        if (!hash) { // 若没有id，则根据自定义规则生成哈希
             hash = ('generated-hash-' + cnt);
             h.setAttribute('id', hash);
         }
-        q.textContent = h.textContent;
-        q.setAttribute('href', '#' + hash);
-        q.addEventListener('click', scrollToHeader.bind(this, h, hash), false);
-        return q;
+        link.textContent = h.textContent; // 链接的文字内容为标题的文字内容
+        link.setAttribute('href', '#' + hash); // 设置链接
+        // link.addEventListener('click', scrollToHeader.bind(this, h, hash), false);
+        return link;
     };
 
     var hs = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
-    var cul = null, plevel = 1;
+    var cul = null,
+        plevel = 1;
 
     // ul：无序列表
     // ol：有序列表
@@ -132,15 +138,16 @@ function TOCize(toc, content, matchHeightTo) {
         // getBoundingClientRect用于获得页面中某个元素的左，上，右和下分别相对浏览器视窗的位置。
         // offsetHeight 返回该元素的像素高度
         var dummyClientTop = scrolldummy.getBoundingClientRect().top - header_placeholder.offsetHeight,
-            margin = 10, c, d; // c = dummyHeight, d = TOC.maxHeight (+'px') scrollTop = aniscroll.getTop(), 
+            margin = 10,
+            c, d; // c = dummyHeight, d = TOC.maxHeight (+'px') scrollTop = aniscroll.getTop(), 
 
         // c = -dummyClientTop + margin使其保持相对的静止
         if ((c = -dummyClientTop + margin) < 0) c = 0;
         if (c) {
             // 返回窗口的文档显示区的高度。
-            var wh = window.innerHeight
-                || document.documentElement.clientHeight
-                || document.body.clientHeight;
+            var wh = window.innerHeight ||
+                document.documentElement.clientHeight ||
+                document.body.clientHeight;
 
             // col_main
             var cbox = matchHeightTo.getBoundingClientRect();
@@ -181,9 +188,9 @@ function PalmSidebar() {
     if (typeof window['getComputedStyle'] !== 'function') return;
 
     function s1() {
-        ww = window.innerWidth
-            || document.documentElement.clientWidth
-            || document.body.clientWidth;
+        ww = window.innerWidth ||
+            document.documentElement.clientWidth ||
+            document.body.clientWidth;
         var h = header.getBoundingClientRect();
         is_palm_mode = getComputedStyle(header).position !== 'static';
         header_placeholder.style.height = is_palm_mode ? (h.bottom - h.top + 'px') : '0px'
