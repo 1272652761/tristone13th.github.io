@@ -176,26 +176,30 @@ function TOCize(toc, content, matchHeightTo) {
     window.addEventListener('resize', s1, false);
 }
 
+
+
+// 处理和Sidebar相关的函数与过程
 function PalmSidebar() {
-    var ww = 0; //window width
+    var ww = 0; // window width
     var pcw = document.querySelector('.page-content .wrapper');
     var header = document.querySelector('.header');
-    var header_placeholder = document.querySelector('.header-placeholder');
+    var header_placeholder = document.querySelector('.header-placeholder'); // 此元素用来表示当在手机上浏览时，点击展开按钮header变高的区域
 
-    var is_palm_mode = false;
+    var is_palm_mode = false; // 展开为true，合并为false
 
-    // do not support old browsers!
+    // 不支持旧有浏览器!
     if (typeof window['getComputedStyle'] !== 'function') return;
 
     function s1() {
         ww = window.innerWidth ||
             document.documentElement.clientWidth ||
             document.body.clientWidth;
-        var h = header.getBoundingClientRect();
+        var h = header.getBoundingClientRect(); // 得到相对于左上角的各个距离
         is_palm_mode = getComputedStyle(header).position !== 'static';
-        header_placeholder.style.height = is_palm_mode ? (h.bottom - h.top + 'px') : '0px'
+        header_placeholder.style.height = is_palm_mode ? (h.bottom - h.top + 'px') : '0px' // 设置为header的高度或者为0
     }
 
+    // 展开和收回sidebar
     function toggleSidebar(e) {
         if (/expand-sidebar/.test(pcw.className)) {
             pcw.className = pcw.className.replace(/\s*expand-sidebar\s*/, ' ');
@@ -204,7 +208,7 @@ function PalmSidebar() {
             pcw.className += " expand-sidebar";
             header.className += " expand-sidebar";
         }
-        setTimeout(s1, 2000);
+        setTimeout(s1);
     }
 
     s1();
@@ -212,6 +216,8 @@ function PalmSidebar() {
     window.addEventListener('resize', s1, false);
 }
 
+
+// 给代码添加双击复制的功能
 function SelectAllize(selector, tips) {
     if (!window.getSelection) return null;
 
@@ -261,9 +267,11 @@ function RealLoad() {
     );
 
     PalmSidebar();
+
+    // 此部分用来给代码添加高亮及双击全选的功能
     SelectAllize("pre.highlight", "Dblclick to select all");
 
-    // imgs is a list
+    // 此部分用来处理图片相关操作
     var imgs = document.querySelectorAll('.post-content > p > img');
     for (var i = imgs.length; i--;) {
         if (imgs[i].parentElement.childNodes.length === 1) {
@@ -271,13 +279,13 @@ function RealLoad() {
         }
     }
 
-    if (document.querySelector('script[type*="math/tex"]')) {
-        var sc = document.createElement('script');
-        sc.setAttribute('type', 'text/javascript');
-        sc.setAttribute('async', 'true');
-        sc.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML');
-        document.body.appendChild(sc);
-    }
+    // 此部分用来支持数学公式的转化，原来的部分带if用来判断文档中是否有数学公式，但是若只存在行内公式的话则不会加载，遂予以删除
+    // if (document.querySelector('script[type*="math/tex"]'))
+    var sc = document.createElement('script');
+    sc.setAttribute('type', 'text/javascript');
+    sc.setAttribute('async', 'true');
+    sc.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML');
+    document.body.appendChild(sc);
 }
 
 RealLoad();
