@@ -178,7 +178,7 @@ function TOCize(toc, content, matchHeightTo) {
 
 
 
-// 处理和Sidebar相关的函数与过程
+// 处理和Sidebar相关的函数与过程，Palm表示手掌、使用移动设备
 function PalmSidebar() {
     var ww = 0; // window width
     var pcw = document.querySelector('.page-content .wrapper');
@@ -190,6 +190,7 @@ function PalmSidebar() {
     // 不支持旧有浏览器!
     if (typeof window['getComputedStyle'] !== 'function') return;
 
+    // toggle后留出空白
     function s1() {
         ww = window.innerWidth ||
             document.documentElement.clientWidth ||
@@ -201,10 +202,10 @@ function PalmSidebar() {
 
     // 展开和收回sidebar
     function toggleSidebar(e) {
-        if (/expand-sidebar/.test(pcw.className)) {
+        if (/expand-sidebar/.test(pcw.className)) { // 前者包含后者
             pcw.className = pcw.className.replace(/\s*expand-sidebar\s*/, ' ');
             header.className = header.className.replace(/\s*expand-sidebar\s*/, ' ');
-        } else {
+        } else { // 前者不包含后者
             pcw.className += " expand-sidebar";
             header.className += " expand-sidebar";
         }
