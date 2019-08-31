@@ -209,7 +209,7 @@ function PalmSidebar() {
             pcw.className += " expand-sidebar";
             header.className += " expand-sidebar";
         }
-        setTimeout(s1);
+        setTimeout(s1, 200);
     }
 
     s1();
