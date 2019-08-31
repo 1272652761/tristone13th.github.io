@@ -12,7 +12,7 @@ Welcome to this website!
 
 ## Profile
 
-My name is Wang Lei and my nickname is `云中君`, I was born in `Handan City, Hebei Province` and majored in `software engineering, Xidian university` in Xi'an. Now I'm working on my graduation project in `Fudan university, Shanghai`. My research direction is focus on computer network and welcome to have a deep communication with me!
+My name is Wang Lei and my nickname is `云中君`, I was born in `Handan City, Hebei Province` and majored in `Computer Science` in `Fudan university, Shanghai`. My research direction is focus on `Computer Network & Reinforcement Learning` and welcome to have a deep communication with me!
 
 My github name is `tristone13th` and here is my github homepage: [tristone13th](https://github.com/tristone13th).
 
@@ -27,3 +27,4 @@ In addition to sports, I also like art very much. For an instance of literature,
 Despite these, I have to say that the `Classical Chinese Language` is also in my favor list, **既见君子，云胡不喜？**
 
  Thanks for your attention!
+
