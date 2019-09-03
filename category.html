@@ -12,7 +12,7 @@ permalink: /category/
 
       {% assign num_all = 0 %}
       {% for tag in site.categories %}
-      {% assign num_all = (num_all | plus: (tag[1]|size)) %}
+      {{ num_all | plus: (tag[1]|size) }}
       {{num_all}}
       {% endfor %}
 
