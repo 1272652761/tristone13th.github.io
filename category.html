@@ -9,6 +9,12 @@ permalink: /category/
 
   <div class="tags">
     <ul class="label">
+
+      {% assign num_all = 0 %}
+      {% for tag in site.categories %}
+      {{num_all  | plus: tag[1]|size}}
+      {% endfor %}
+
       {% for tag in site.categories %}
       <li>
         <a href="#{{tag[0]}}">
@@ -17,6 +23,7 @@ permalink: /category/
         </a>
       </li>
       {% endfor %}
+
     </ul>
   </div>
 
