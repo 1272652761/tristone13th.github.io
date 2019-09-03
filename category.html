@@ -11,10 +11,10 @@ permalink: /category/
     <ul class="label">
 
       {% assign num_all = 0 %}
-      {% assign name = "??" %}
+      {% assign name = "ALL" %}
 
       {% for tag in site.categories %}
-      {% assign num_all = num_all | plus: (tag[1]|size) %}
+      {% assign num_all = (num_all | plus: (tag[1]|size)) %}
       {% endfor %}
 
       <li>
