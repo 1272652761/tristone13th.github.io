@@ -18,10 +18,11 @@ permalink: /category/
       {% endfor %}
 
       <li>
-        <span>{{name}}</span>
-        <span class="count">{{num_all}}</span>
+        <a>
+          <span>{{name}}</span>
+          <span class="count">{{num_all}}</span>
+        </a>
       </li>
-
 
       {% for tag in site.categories %}
       <li>
