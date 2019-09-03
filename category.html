@@ -12,13 +12,13 @@ permalink: /category/
 
       {% assign num_all = 0 %}
       {% for tag in site.categories %}
-      {{ (tag[1]|size) }}
+      {% assign num_all = tag[1]| size | plus: num_all %}
       {{num_all}}
       {% endfor %}
 
       <li>
         <a>
-          {% assign name = "??" %}
+          {% assign name = "ALL" %}
           <span>{{name}}</span>
           <span class="count">{{num_all}}</span>
         </a>
