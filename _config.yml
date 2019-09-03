@@ -1,26 +1,27 @@
 # Site settings
-title: 云中君
-url: "https://tristone13th.github.io"    # the protocol and hostname of your site, eg. `http://laobubu.github.io`
-baseurl: "" # the prefix of your site uri, eg. `"/jekyll-theme-EasyBook"` or empty string `""`
-timezone: Asia/Shanghai
+title: Another Blog
+url: "http://laobubu.github.io"    # the protocol and hostname of your site, eg. `http://laobubu.github.io`
+baseurl: "/jekyll-theme-EasyBook" # the prefix of your site uri, eg. `"/jekyll-theme-EasyBook"` or empty string `""`
+#timezone: Asia/Chongqing
 description: >
-  既见君子，云胡不喜？
+  One or more sentences introducing this blog.
 
 # Your information
-# email: tristone13th@outlook.com
-author: 云中君
-avatar: "../img/avatar.jpg"
-profile: 既见君子，云胡不喜？
-# twitter_username: twitter_username
-# github_username:  tristone13th
+email: your_email@example.com
+author: your_name
+avatar: "//www.gravatar.com/avatar/your_email_md5?d=mm&s=135"
+profile: One sentence introducing yourself.
+#twitter_username: twitter_username
+#github_username:  github_username
 profile_links:
-  GitHub: "https://github.com/tristone13th"
+  Email: "mailto:your_email@example.com"
+  GitHub: "https://github.com/laobubu/jekyll-theme-EasyBook"
   # You can add more profile links above, or edit _includes/sidebar.html 
 
-# Comment Service: 多说
-# choose one and un-comment the line to active it
-# disqus_shortname: xxx   # get one: https://disqus.com/admin/signup/
-# duoshuo_shortname: xxx  # get one: http://duoshuo.com/create-site/
+# Comment Service (Disqus or 多说)
+#  choose one and un-comment the line to active it
+#disqus_shortname: xxx   # get one: https://disqus.com/admin/signup/
+#duoshuo_shortname: xxx  # get one: http://duoshuo.com/create-site/
 
 excerpt_separator: <!--more-->
 
@@ -28,10 +29,9 @@ header:
   links:             # Links on the header. Link to in-site page with a slash as prefix
     About: /about/
     Category: /category/
-    Donate: /donate/
+    Donate: https://laobubu.net/donate.html
 
 permalink: /archivers/:title
-
 plugins:
  - jekyll-paginate
  - jekyll-gist
