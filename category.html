@@ -11,6 +11,8 @@ permalink: /category/
     <ul class="label">
 
       {% assign num_all = 0 %}
+{% assign name = "??" %}
+
       {% for tag in site.categories %}
       {% for i in (1..(tag[1]|size)) %}
       {% increment num_all %}
@@ -18,7 +20,7 @@ permalink: /category/
       {% endfor %}
 
       <li>
-        <span>??</span>
+        <span>{{name}}</span>
         <span class="count">{{num_all}}</span>
       </li>
 
