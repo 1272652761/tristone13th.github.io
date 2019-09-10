@@ -35,4 +35,4 @@ snap install nextcloud
 
 # 在Ubuntu环境下安装Client版本
 
-进入软件商店，查找nextcloud-client，找到官方发布的安装即可。
+在官网找到AppImage版本下载运行即可。
