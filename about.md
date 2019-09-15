@@ -20,11 +20,11 @@ My email is [tristone13th@outlook.com](https://outlook.live.com).
 
 ## Hobbies
 
-I like play billiard and always play it with my best friends though my playing technique is not so good, I am also focus on `Laliga`, the best football league in this world, and my favorite team is `RCD Espanyol` because of  `Wu Lei`!
+I like play billiard and always play it with my best friends though my playing technique is not so good. I am concerned about `La Liga`, which is the best football league in this world, and my favorite team is `RCD Espanyol` because of  `Wu Lei`!
 
-In addition to sports, I also like art very much. For an instance of literature,  `The Story of the Stone ` is my favorite Chinese novel and I regard it as the beauty and  pearl in the human history. The `Kun Opera` is also my favorite and I think it is a GIFT designed for my ears.
+In addition to sports, I also like art very much. In terms of literature,  `The Story of the Stone（Dream of the Red Chamber，紅樓夢） ` is my favorite Chinese novel and I regard it as the beauty and  pearl in the human history. The `Kun Opera` is also my favorite and I think it is a GIFT designed for my ears.
 
-Despite these, I have to say that the `Classical Chinese Language` is also in my favor list, **既见君子，云胡不喜？**
+Despite these, I have to say that the `Classical Chinese（古代漢語）` is also in my favor list, **既見君子，雲胡不喜？**
 
  Thanks for your attention!
 
