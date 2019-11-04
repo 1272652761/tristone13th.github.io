@@ -19,4 +19,3 @@ Welcome to this website!
 - Github: https://github.com/tristone13th;
 - E-mail: tristone13th@outlook.com.
 - Welcome to have a deep communication with me! 
-
