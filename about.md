@@ -10,12 +10,10 @@ Welcome to this website!
 
 # About Me
 
-## Profile
-
 - Nickname:  雲中君, tristone13th；
 - Where I come from: Handan, Xi‘an, Shanghai;
 - Foci: CS, SE;
 - Hobbies: Billiard, Football, Classical Chinese, Kun Opera;
-- Github: https://github.com/tristone13th;
-- E-mail: tristone13th@outlook.com.
+- Github: [https://github.com/tristone13th](https://github.com/tristone13th);
+- E-mail: [tristone13th@outlook.com](tristone13th@outlook.com);
 - Welcome to have a deep communication with me! 
