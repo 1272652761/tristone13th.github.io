@@ -11,7 +11,8 @@ Welcome to this website!
 # About Me
 
 - Nickname:  雲中君, tristone13th；
-- Where I come from: Handan, Xi‘an, Shanghai;
+- Where I come from: Handan(Hebei), Xi‘an(Shaanxi), Shanghai;
+- Education: Xidian University(Bachelor), Fudan University(Master Candidate);
 - Foci: CS, SE;
 - Hobbies: Billiard, Football, Classical Chinese, Kun Opera;
 - Github: [https://github.com/tristone13th](https://github.com/tristone13th);
