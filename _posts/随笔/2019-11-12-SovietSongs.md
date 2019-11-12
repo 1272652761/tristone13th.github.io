@@ -1,5 +1,5 @@
 ---
-categories: 其他
+categories: 随笔
 title: Soviet & Liberty & International Songs
 ---
 
