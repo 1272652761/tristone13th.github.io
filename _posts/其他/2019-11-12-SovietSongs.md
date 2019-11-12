@@ -9,7 +9,7 @@ title: Soviet & Liberty & International Songs
 
 是[法国](https://zh.wikipedia.org/wiki/法國)大文豪[雨果](https://zh.wikipedia.org/wiki/雨果)小说《[悲惨世界](https://zh.wikipedia.org/wiki/悲惨世界)》的同名改编[音乐剧](https://zh.wikipedia.org/wiki/音樂劇)《[悲惨世界](https://zh.wikipedia.org/wiki/悲慘世界_(音樂劇))》中的一首著名[歌曲](https://zh.wikipedia.org/wiki/歌曲)，乐曲背景为自[拿破仑战争](https://zh.wikipedia.org/wiki/拿破崙戰爭)、[波旁王室复辟](https://zh.wikipedia.org/wiki/波旁复辟)、[七月革命](https://zh.wikipedia.org/wiki/七月革命)到1832年法国爆发意图推翻法国[七月王朝](https://zh.wikipedia.org/wiki/七月王朝)的[六月起义](https://zh.wikipedia.org/wiki/六月起义)，曲风激昂悲壮，被视为反[极权](https://zh.wikipedia.org/wiki/極權)统治的[革命](https://zh.wikipedia.org/wiki/革命)代表歌曲之一。
 
-油管链接在这里：[Les Mis "Do You Hear The People Sing"](https://www.youtube.com/watch?v=gMYNfQlf1H8)。
+法文版网易云链接：[A La Volonté du Peuple](https://music.163.com/#/song?id=5058598)。
 
 - **《El pueblo unido jamás será vencido》**
 
