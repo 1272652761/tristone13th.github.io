@@ -53,23 +53,31 @@ Anti-Flag（反旗）是来自美国钢铁基地匹兹堡的一支朋克乐队�
 
 最诙谐和讽刺的还是《What Did You Learn In School Today?》。
 
-- **A las Barricadas**
+- **《Solidarity Forever》**
+
+很著名的工会歌曲，除了上面提到过的Pete Seeger版本，还有很多个不同的版本都很好听：
+
+一个童声加女声版本：[Solidarity Forever]( https://music.163.com/#/song?id=19786085 )；
+
+一个很硬的法语版本：[Solidarité](https://music.163.com/#/song?id=558742652)；
+
+- **《A las Barricadas》**
 
 混歌，前半部分华沙曲，后半部分团结的人民永远不会击溃，很有意思的一个版本。
 
 网易云链接：[A las Barricadas]( https://music.163.com/#/song?id=485207073 )；
 
-- **I Believe In The Company**
+- **《I Believe In The Company》**
 
 讽刺歌曲，网易云链接：[I Believe In The Company]( https://music.163.com/#/song?id=18711701 )；
 
-- **La Marseillaise**
+- **《La Marseillaise》**
 
 鼎鼎大名的法国国歌《马赛曲》，最喜欢的歌之一，茨威格传记作品《人类的群星闪耀时》中介绍了这首歌的诞生背景，放一个温柔的童声版本：
 
 网易云链接：[France [La Marseillaise (The March of Marseille), "Arise, children of the fatherland…"]:La Marseillaise (France)]( https://music.163.com/#/song?id=465877802 )；
 
-- **Bandiera rossa**
+- **《Bandiera rossa》**
 
 ***Bandiera Rossa*** (Italian for "Red Flag"), often also called ***Avanti Popolo*** after its opening words (also to avoid any confusion with ***The three flags***, another socialist song) is one of the most famous songs of the Italian labour movement.  
 
@@ -77,43 +85,47 @@ Anti-Flag（反旗）是来自美国钢铁基地匹兹堡的一支朋克乐队�
 
 网易云链接：[Bandiera rossa]( https://music.163.com/#/song?id=558743677 )；
 
-- **L'appel du komintern**
+- **《L'appel du komintern》**
 
  《共产国际的召唤/L'appel du komintern》改编自汉斯•埃斯勒所写的《共产国际之歌/Kominternlied》 。
 
 网易云链接：[L'appel du komintern]( https://music.163.com/#/song?id=558743678 )；
 
-- **There Is Power in a Union**
+- **《There Is Power in a Union》**
 
 典型的美国工会年轻人唱的歌，非常激情澎湃。
 
 网易云链接：[There Is Power in a Union]( https://music.163.com/#/song?id=3482007 )；
 
-- **Internationale**
+- **《Internationale》**
 
 家喻户晓的《国际歌》，“英特纳雄耐尔一定会实现”。
 
 放一个柔和的版本：[Internationale]( https://music.163.com/#/song?id=494611357 )；
 
-- **Vowärts internationale brigade**
+还有一个有趣的版本，是用上古汉语唱的《大楚国际歌》，歌词写的非常漂亮，有兴趣可以看看：[（上古汉语）大楚国际歌（Cover 唐朝乐队）]( https://music.163.com/#/song?id=491096778)。
+
+- **《Vowärts internationale brigade》**
 
 《前进，国际纵队》，称得上是歌曲界的国际纵队，歌曲的串烧跨越了国家的隔阂，来自各国的歌曲像当年西班牙内战时的国际纵队一样紧密地团结在一起，喊起响亮的口号：“前进，国际纵队，高举团结之旗！”国际纵队永垂不朽！国际主义精神永垂不朽！（摘自网易云评论）
 
 网易云链接：[Vowärts internationale brigade]( https://music.163.com/#/song?id=528038765 )；
 
-- **Soviet March** 
+- **《Soviet March》** 
 
 玩过红色警戒三的玩家肯定都听过这个著名的歌曲，这首歌当初是美国佬黑苏联做的，现在反而成了宣传曲。
 
 贴一个Remix版本：[SovietMarchRemix]( https://music.163.com/#/song?id=428375398 )；
 
-- **Viva La Vida**
+- **《Viva La Vida》**
 
 很喜欢这首歌，原唱是Coldplay，但是更喜欢David Garrett的小提琴版。
 
 断头台、安托瓦内特、街垒、巴士底狱、雅各宾派...很好地再现了路易十六时期激情澎湃的时代浪潮，这首歌搭配育碧的刺客信条系列之《大革命》，不能更赞。
 
 小提琴版：[Viva La Vida]( https://music.163.com/#/song?id=26989255 )。
+
+
 
 
 
