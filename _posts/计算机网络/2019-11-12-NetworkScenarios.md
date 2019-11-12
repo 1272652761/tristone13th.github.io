@@ -6,6 +6,7 @@ title: Network Scenarios
 #  Tactile Internet 
 
 - Extremely **low latency** in combination with high **availability**, **reliability** and **security** will define the character of the Tactile Internet;
+- The objective is to transport a sense of touch over the Internet；
 - Designed for Human **interactions with a technical system**.
 
 ## References
