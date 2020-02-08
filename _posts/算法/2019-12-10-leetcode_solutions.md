@@ -3,6 +3,37 @@ categories: 算法
 title: LeetCode Solutions
 ---
 
+# 1
+
+可以使用Hashmap加快速度。
+
+因为在该数组中我们保证了不同的数字$nums[i]$只有一个下标$i$，所以我们可以使用Map数据结构，而Hashmap可以通过空间来换取时间，通过计算$target-nums[i]$作为键值来快速定位其坐标$j$。
+
+```c++
+// 普通暴力解法
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        for(int i = 0; i < nums.size(); i++){
+            for(int j = i + 1; j < nums.size(); j++){
+                if(nums[i] + nums[j] == target) {
+                    vector<int> res;
+                    res.push_back(i);
+                    res.push_back(j);
+                    return res;
+                }
+            }
+        }
+        vector<int> res;
+        res.push_back(0);
+        res.push_back(0);
+        return res;
+    }
+};
+```
+
+# 2
+
 # 129
 
 可以把这道题形式化地表述一下：
