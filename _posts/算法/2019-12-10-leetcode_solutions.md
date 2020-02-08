@@ -1,6 +1,6 @@
 ---
 categories: 算法
-title: LeetCode题解
+title: LeetCode Solutions
 ---
 
 # 1026
