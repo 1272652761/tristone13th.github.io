@@ -34,6 +34,74 @@ public:
 
 # 2
 
+使用指针对每一位进行迭代相加即可，注意进位问题。
+
+注意，这里的计算次序不能反：
+
+```c++
+val = (add1 + add2 + flag) % 10;
+flag = (add1 + add2 + flag) / 10;
+```
+
+这道题目的代码如下：
+
+```c++
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+        struct ListNode* l3 = new ListNode(0);
+        struct ListNode* res = l3;
+        int add1 = 0;
+        int add2 = 0;
+        int flag = 0;
+        int val = 0;
+        while(l1 || l2){
+            if (l1){
+                add1 = l1->val;
+                l1 = l1->next;
+            } 
+            else add1 = 0;
+            if (l2){
+                add2 = l2->val;
+                l2 = l2->next;
+            }
+            else add2 = 0;
+            val = (add1 + add2 + flag) % 10;
+            flag = (add1 + add2 + flag) / 10;
+            l3->val = val;
+            if(l1 || l2){
+                struct ListNode* temp = new ListNode(0);
+                l3->next = temp;
+                l3 = l3->next;
+            }
+        }
+        if (flag){
+            struct ListNode* temp = new ListNode(0);
+            l3->next = temp;
+            l3 = l3->next;
+            l3->val = 1;
+        }
+        return res;
+    }
+};
+```
+
+
+
+
+
+
+
+
+
 # 129
 
 可以把这道题形式化地表述一下：
