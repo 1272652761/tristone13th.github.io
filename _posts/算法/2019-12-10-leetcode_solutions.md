@@ -219,7 +219,167 @@ class Solution(object):
                 return (float(max_left) + min_right) / 2
 ```
 
+# 5
 
+可以将给定字符串反转，从而成为一个最长子串问题。
+
+在记录最长子串时，由于$aacdecaa$翻转过来后会判定$aac$成为最长回文串，所以在记录时要首先判断是不是回文串。
+
+整道题目的代码如下：
+
+```python
+class Solution(object):
+    def longestPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        s2 = s[::-1]
+        length = len(s)
+        res_list = [[0 for j in range(length + 1)] for i in range(length + 1)]
+        res = 0
+        res_s = ""
+
+        for i in range(1, length + 1):
+            for j in range(1, length + 1):
+                if s[i - 1] == s2[j - 1]:
+                    res_list[i][j] = res_list[i-1][j-1] + 1
+                    if res_list[i][j] > res:
+                        temp_s = s[i-res_list[i][j]:i]
+                        if temp_s == temp_s[::-1]:
+                            res = res_list[i][j]
+                            res_s = temp_s
+
+        return res_s
+```
+
+# 6
+
+对每一行进行计算，算出来每一行当中每一个位置对应的字母即可。
+
+整道题目的代码如下：
+
+```python
+class Solution(object):
+    def convert(self, s, numRows):
+        """
+        :type s: str
+        :type numRows: int
+        :rtype: str
+        """
+        if numRows == 1:
+            return s
+
+        res = ""
+        n = len(s)
+        for i in range(numRows):
+            if i > 0 and i < numRows - 1:
+                first = i
+                second = i + (numRows - i - 1) * 2
+                while first < n:
+                    res += s[first]
+                    if second < n:
+                        res += s[second]
+                    first += (2*numRows - 2)
+                    second += (2*numRows - 2)
+            else:
+                index = i
+                while index < n:
+                    res += s[index]
+                    index += (2*numRows - 2)
+
+        return res
+```
+
+# 7
+
+转化成字符串，反转之后再转化回来。
+
+整道题目的代码如下：
+
+```python
+class Solution(object):
+    def reverse(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        x = str(x)
+        flag = False
+        if x[0] == '-':
+            x = x[1::]
+            flag = True
+        x = x[::-1]
+        if flag:
+            res = -int(x)
+        else:
+            res = int(x)
+        minv = -(1 << 31)
+        maxv = (1 << 31) - 1
+        if res < minv or res > maxv:
+            return 0
+        return res
+```
+
+# 8
+
+没什么技术含量，但是需要考虑很多细节。
+
+整道题目的代码如下：
+
+```python
+class Solution(object):
+    def myAtoi(self, str):
+        """
+        :type str: str
+        :rtype: int
+        """
+        str = str.lstrip()
+
+        if str == "":
+            return 0
+        if str[0] == '-':
+            flag = True
+            str = str[1::]
+        elif str[0] == '+':
+            flag = False
+            str = str[1::]
+        else:
+            flag = False
+        res = ""
+        for item in str:
+            if item.isdigit():
+                res += item
+            else:
+                break
+        if res == "":
+            return 0
+        minv = -(1 << 31)
+        maxv = (1 << 31) - 1
+        res = -int(res) if flag else int(res)
+        if res < minv:
+            return minv
+        if res > maxv:
+            return maxv
+        return res
+```
+
+# 8
+
+乏善可陈。
+
+整道题目的代码如下：
+
+```python
+class Solution(object):
+    def isPalindrome(self, x):
+        """
+        :type x: int
+        :rtype: bool
+        """
+        x = str(x)
+        return (True if x == x[::-1] else False)
+```
 
 
 
