@@ -462,6 +462,133 @@ class Solution(object):
         return res_m[len_s][len_p]
 ```
 
+# 10
+
+使用**双指针法**，设置左右两个指针$i,j$，初始时位于两侧。
+
+当一边低于另一边时，迭代此侧指针，直到$i=j$，记录下迭代过程中遇到的最大值，作为结果。
+
+这么做不会损失最大值，因为迭代掉的木板与任意木板之间的水量不会超过目前已经记录的值。
+
+整道题目的代码如下：
+
+```python
+class Solution(object):
+    def maxArea(self, height):
+        """
+        :type height: List[int]
+        :rtype: int
+        """
+        if len(height) == 0:
+            return 0
+
+        i = 0
+        j = len(height) - 1
+        res = 0
+
+        while i != j:
+            area = min(height[i], height[j]) * (j - i)
+            if area > res:
+                res = area
+            if height[i] > height[j]:
+                j = j - 1
+            else:
+                i = i + 1
+
+        return res
+```
+
+# 11
+
+将复合符号看作一个符号，按照每个符号代表的数字大小从大到小取模，得到整个罗马数字序列。
+
+整道题目的代码如下：
+
+```python
+class Solution(object):
+    def intToRoman(self, num):
+        """
+        :type num: int
+        :rtype: str
+        """
+        m = num / 1000
+        num = num % 1000
+
+        cm = num / 900
+        num = num % 900
+
+        d = num / 500
+        num = num % 500
+
+        cd = num / 400
+        num = num % 400
+
+        c = num / 100
+        num = num % 100
+
+        xc = num / 90
+        num = num % 90
+
+        l = num / 50
+        num = num % 50
+
+        xl = num / 40
+        num = num % 40
+
+        x = num / 10
+        num = num % 10
+
+        ix = num / 9
+        num = num % 9
+
+        v = num / 5
+        num = num % 5
+
+        iv = num / 4
+        num = num % 4
+
+        i = num
+
+        res = m*'M'+cm*'CM'+d*'D'+cd*'CD'+c*'C'+xc*'XC' + \
+            l*'L'+xl*'XL'+x*'X'+ix*'IX'+v*'V'+iv*'IV'+i*'I'
+
+        return res
+```
+
+# 12
+
+判断当前字符是否比后一个字符小，如果是这样，那么它应该取负。
+
+整道题目的代码如下：
+
+```python
+class Solution(object):
+    def romanToInt(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        if len(s) == 0:
+            return 0
+
+        map = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+        res = 0
+        for i in range(len(s) - 1):
+            a = map[s[i]]
+            b = map[s[i + 1]]
+            if a < b:
+                res -= a
+            else:
+                res += a
+
+        res += map[s[-1]]
+        return res
+```
+
+
+
+
+
 
 
 
