@@ -364,7 +364,7 @@ class Solution(object):
         return res
 ```
 
-# 8
+# 9
 
 乏善可陈。
 
@@ -381,7 +381,7 @@ class Solution(object):
         return (True if x == x[::-1] else False)
 ```
 
-# 9
+# 10
 
 这道题采用动态规划的思想。下面按照动态规划四要素逐一进行考虑：
 
@@ -462,7 +462,7 @@ class Solution(object):
         return res_m[len_s][len_p]
 ```
 
-# 10
+# 11
 
 使用**双指针法**，设置左右两个指针$i,j$，初始时位于两侧。
 
@@ -498,7 +498,7 @@ class Solution(object):
         return res
 ```
 
-# 11
+# 12
 
 将复合符号看作一个符号，按照每个符号代表的数字大小从大到小取模，得到整个罗马数字序列。
 
@@ -555,7 +555,7 @@ class Solution(object):
         return res
 ```
 
-# 12
+# 13
 
 判断当前字符是否比后一个字符小，如果是这样，那么它应该取负。
 
@@ -585,7 +585,7 @@ class Solution(object):
         return res
 ```
 
-# 13
+# 14
 
 乏善可陈。
 
@@ -618,7 +618,41 @@ class Solution(object):
         return res
 ```
 
-# 14
+# 15
+
+首先对整个数组进行排序，其次遍历所有的$i$，在$i$固定时，$j$从左往右扫描，而$k$从右往左扫描，直到$j=k$结束。
+
+这道题将三个数的和问题转化成为了两个数的和问题。而两个数的和问题可以在$O(nlogn)$的时间内解决。
+
+整道题目的代码如下：
+
+```python
+class Solution(object):
+    def threeSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        res = set()
+        nums.sort()
+
+        for i in range(len(nums) - 2):
+            num = -nums[i]
+            j = i + 1
+            k = len(nums) - 1
+
+            while j != k:
+                sum = nums[j] + nums[k]
+                if sum == num:
+                    res.add((nums[i], nums[j], nums[k]))
+                    j = j + 1
+                elif sum < num:
+                    j = j + 1
+                else:
+                    k = k - 1
+
+        return list(res)
+```
 
 
 
