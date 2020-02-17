@@ -968,6 +968,76 @@ class Solution(object):
         return res
 ```
 
+# 23
+
+可以建立一个小顶堆，将这些列表放入，每次从其中取值即可。
+
+整道题目的代码如下：
+
+```python
+class Solution(object):
+    def mergeKLists(self, lists):
+        """
+        :type lists: List[ListNode]
+        :rtype: ListNode
+        """
+        from Queue import PriorityQueue
+
+        head = point = ListNode(0)
+        q = PriorityQueue()
+
+        # initialize heap
+        for l in lists:
+            if l:
+                q.put((l.val, l))
+
+        while not q.empty():
+            val, node = q.get()
+            node = node.next
+            point.next = ListNode(val)
+            point = point.next
+            if node:
+                q.put((node.val, node))
+
+        return head.next
+```
+
+# 24
+
+使用递归来解题，我们可以将问题拆分成规模更小的问题，即前$n$个节点的交换为前两个节点的交换加上后$n-2$个节点的交换。
+
+整道题目的代码如下：
+
+```python
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def swapPairs(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+
+        # If the list has no node or has only one node left.
+        if not head or not head.next:
+            return head
+
+        # Nodes to be swapped
+        first_node = head
+        second_node = head.next
+
+        # Swapping
+        first_node.next  = self.swapPairs(second_node.next)
+        second_node.next = first_node
+
+        # Now the head is the second node
+        return second_node
+```
+
 
 
 
