@@ -94,6 +94,8 @@ public:
 };
 ```
 
+
+
 # 3
 
 这是一个缩小规模问题，该问题可以通过不断缩小问题规模来解决。设开始下标为$start$，结束下标为$end$，从头到尾扫描整个字符串，当发现有字符$s[j]$与前面字符$s[i]$相同时，有：
@@ -132,6 +134,8 @@ class Solution(object):
                 break
         return res
 ```
+
+
 
 # 4
 
@@ -219,6 +223,8 @@ class Solution(object):
                 return (float(max_left) + min_right) / 2
 ```
 
+
+
 # 5
 
 可以将给定字符串反转，从而成为一个最长子串问题。
@@ -252,6 +258,8 @@ class Solution(object):
 
         return res_s
 ```
+
+
 
 # 6
 
@@ -291,6 +299,8 @@ class Solution(object):
         return res
 ```
 
+
+
 # 7
 
 转化成字符串，反转之后再转化回来。
@@ -320,6 +330,8 @@ class Solution(object):
             return 0
         return res
 ```
+
+
 
 # 8
 
@@ -364,6 +376,8 @@ class Solution(object):
         return res
 ```
 
+
+
 # 9
 
 乏善可陈。
@@ -380,6 +394,8 @@ class Solution(object):
         x = str(x)
         return (True if x == x[::-1] else False)
 ```
+
+
 
 # 10（动态规划）
 
@@ -462,6 +478,8 @@ class Solution(object):
         return res_m[len_s][len_p]
 ```
 
+
+
 # 11（双指针）
 
 使用**双指针法**，设置左右两个指针$i,j$，初始时位于两侧。
@@ -497,6 +515,8 @@ class Solution(object):
 
         return res
 ```
+
+
 
 # 12
 
@@ -555,6 +575,8 @@ class Solution(object):
         return res
 ```
 
+
+
 # 13
 
 判断当前字符是否比后一个字符小，如果是这样，那么它应该取负。
@@ -584,6 +606,8 @@ class Solution(object):
         res += map[s[-1]]
         return res
 ```
+
+
 
 # 14
 
@@ -617,6 +641,8 @@ class Solution(object):
 
         return res
 ```
+
+
 
 # 15
 
@@ -654,6 +680,8 @@ class Solution(object):
         return list(res)
 ```
 
+
+
 # 16
 
 此题与上题相同，只需要将上题中的0替换为target，并将严格判定相等的条件替换为寻求最小值的条件即可。
@@ -690,6 +718,8 @@ class Solution(object):
         return res
 ```
 
+
+
 # 17
 
 乏善可陈。
@@ -724,6 +754,8 @@ class Solution(object):
 
         return res
 ```
+
+
 
 # 18
 
@@ -760,6 +792,8 @@ class Solution(object):
 
         return list(res)
 ```
+
+
 
 # 19
 
@@ -803,6 +837,8 @@ class Solution(object):
         return res
 ```
 
+
+
 # 20
 
 用栈即可。
@@ -841,6 +877,10 @@ class Solution(object):
 
         return st.is_empty()
 ```
+
+
+
+
 
 # 21
 
@@ -893,6 +933,8 @@ class Solution(object):
 
         return res
 ```
+
+
 
 # 22（回溯）
 
@@ -968,6 +1010,8 @@ class Solution(object):
         return res
 ```
 
+
+
 # 23
 
 可以建立一个小顶堆，将这些列表放入，每次从其中取值即可。
@@ -1001,6 +1045,8 @@ class Solution(object):
 
         return head.next
 ```
+
+
 
 # 24
 
@@ -1037,6 +1083,10 @@ class Solution(object):
         # Now the head is the second node
         return second_node
 ```
+
+
+
+# 25
 
 
 
