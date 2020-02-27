@@ -94,6 +94,42 @@ for *g r* will map *r* to *a*, *f r a* will map *r, a* to *b*, so the whole lamb
 
 the result is 5 + (5 + 3) = 13.
 
+# Applicative Functor
+
+### How to understand in functions as applicatives, `(+) <$> (+3) <*> (*100) $ 5 ` = 508?
+
+We know `(+)` has type: `Num a, a -> a -> a`;
+
+We also know `(+3)` and `(*100)`has type: `Num r, a, r -> a`;
+
+`(+) <$> (+3)` equals `pure (+) <*> (+3)`, where `:t pure (+)` equals `Num r, a, r -> a -> a -> a`
+
+In another words, the `pure (+)` maps the return value of function `(+3)` to a function, for
+
+```haskell
+f <*> g = \r -> f r (g r)
+```
+
+we can apply the operators and get:
+
+```haskell
+pure (+) <*> (+3) = \r x -> (r + 3) + x 
+```
+
+it has the type `r -> x -> a`. We then calculate `pure (+) <*> (+3) <*> (*100)` using the definition of <*>, and get:
+
+```haskell
+pure (+) <*> (+3) <*> (*100) = \r -> (r + 3) + (r * 100)
+```
+
+then we apply this function with parameter 5, we get:
+
+```haskell
+(5 + 3) + (5 * 100) = 508 
+```
+
+
+
 
 
 
