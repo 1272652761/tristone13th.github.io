@@ -100,7 +100,7 @@ the result is 5 + (5 + 3) = 13.
 
 We know `(+)` has type: `Num a, a -> a -> a`;
 
-We also know `(+3)` and `(*100)`has type: `Num r, a, r -> a`;
+We also know `(+3)` and `(*100)` has type: `Num r, a, r -> a`;
 
 `(+) <$> (+3)` equals `pure (+) <*> (+3)`, where `:t pure (+)` equals `Num _, a, _ -> a -> a -> a`
 
