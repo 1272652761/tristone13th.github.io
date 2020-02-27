@@ -102,9 +102,9 @@ We know `(+)` has type: `Num a, a -> a -> a`;
 
 We also know `(+3)` and `(*100)`has type: `Num r, a, r -> a`;
 
-`(+) <$> (+3)` equals `pure (+) <*> (+3)`, where `:t pure (+)` equals `Num r, a, r -> a -> a -> a`
+`(+) <$> (+3)` equals `pure (+) <*> (+3)`, where `:t pure (+)` equals `Num _, a, _ -> a -> a -> a`
 
-In another words, the `pure (+)` maps the return value of function `(+3)` to a function, for
+In another words, the `pure (+)` simply takes a `_` parameter whatever and return the `+` operator, the parameter `_` has no effect on the final return value. `pure (+)` also maps the return value of function `(+3)` to a function. Now for
 
 ```haskell
 f <*> g = \r -> f r (g r)
@@ -113,19 +113,32 @@ f <*> g = \r -> f r (g r)
 we can apply the operators and get:
 
 ```haskell
-pure (+) <*> (+3) = \r x -> (r + 3) + x 
+pure (+) <*> (+3) = 
+	\r -> f r (gr) =
+	\r -> + (gr) =
+	\r -> + (r + 3) =
+	\r x -> x + (r + 3)
 ```
 
 it has the type `r -> x -> a`. We then calculate `pure (+) <*> (+3) <*> (*100)` using the definition of <*>, and get:
 
 ```haskell
-pure (+) <*> (+3) <*> (*100) = \r -> (r + 3) + (r * 100)
+pure (+) <*> (+3) <*> (*100) = 
+	\r -> f r (gr) =
+	\r -> (r + 3) + (gr)
+	\r -> (r + 3) + (r * 100)
 ```
 
 then we apply this function with parameter 5, we get:
 
 ```haskell
 (5 + 3) + (5 * 100) = 508 
+```
+
+we can simply think this applicative style as first to calculate the value after `<$>` and sum them up with the operator before `<$>`. In last example, this operator is a binary operator equals `(+)`, we can replace it with a triple operator `(\x y z -> [x,y,z])`, so the following equation holds:
+
+```haskell
+(\x y z -> [x,y,z]) <$> (+3) <*> (*2) <*> (/2) $ 5 = [8.0,10.0,2.5]
 ```
 
 
