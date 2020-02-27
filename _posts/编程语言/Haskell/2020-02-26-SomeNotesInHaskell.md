@@ -81,10 +81,20 @@ Finally, it is not hard to understand that the <\*> function in Applicative func
 
 ```haskell
 <*> :: f (a -> b) -> f a -> f b
+<*> :: (r -> a -> b) -> (r -> a) -> (r -> b)
+<&> :: (a -> b) -> (r -> a) -> (r -> b)
 f <*> g = \r -> f r (g r)
 ```
 
-for *g r* will map *r* to *a*, *f r a* will map *r, a* to *b*, so the whole lambda function can be seen as `r -> b`,  also `f b`.
+for *g r* will map *r* to *a*, *f r a* will map *r, a* to *b*, so the whole lambda function can be seen as `r -> b`,  also `f b`. For an instance:
+
+```haskell
+((+) <*> (+3)) 5
+```
+
+the result is 5 + (5 + 3) = 13.
+
+
 
 
 
