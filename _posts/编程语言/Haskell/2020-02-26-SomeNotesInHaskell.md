@@ -141,9 +141,32 @@ we can simply think this applicative style as first to calculate the value after
 (\x y z -> [x,y,z]) <$> (+3) <*> (*2) <*> (/2) $ 5 = [8.0,10.0,2.5]
 ```
 
+# Monad
 
+### How to understand the implementation of `State s` Monad
 
+The implementation of Monad `State s` is:
 
+```haskell
+instance Monad (State s) where 
+	return x = State $ \s -> (x, s) 
+	(State h) >>= f = State $ \s -> let (a, newState) = h s 
+										(State g) = f a
+									in g newState
+```
 
+Well, the result of feeding a stateful computation to a function with `>>=` must be a stateful computation, right? So, we start of with the `State` newtype wrapper, and then we type out a lambda. This lambda will be our new stateful computation. function *h* has type `s -> (a, s)`,  and the result function has type `s -> (b, s)`. **The whole implementation of `>>=` do is passing a state to the function *h*, computing its new state and pass the new state to function *g* implied in *f*, getting the newer state.** So that's not strange that when we define following function:
 
+```haskell
+import Control.Monad.State
+stackManip :: State Stack Int 
+stackManip = do 
+	push 3 
+	a <- pop 
+	pop
+```
+
+and we execute it with `runState stackManip [5,8,2,1]`. The first state is `[5,8,2,1]`, we pass the state to the `push 3` and a newer state `[3,5,8,2,1]` is generated when it turns to `a <- pop`, and so on.
+
+ 
 
