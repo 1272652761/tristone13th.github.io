@@ -5,6 +5,12 @@ title: Some notes in Haskell
 
 # Lazy Evaluation
 
+### Why does `a ++ (b ++ c)` faster than `a ++ (b ++ c)`?
+
+`++` traverses the left parameter and append each item of it to the right parameter which leads to a worse performance when using the wrong association. 
+
+In short, the bad association gives a quadratic amount of traversal as it redoes all the traversals it has already done, plus one more, at each invocation of `(++)`, while the good association traverses each list at most once. 
+
 # Functor
 
 ### What's the definition of Functor?
