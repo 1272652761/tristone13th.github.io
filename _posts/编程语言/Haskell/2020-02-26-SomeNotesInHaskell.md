@@ -3,7 +3,22 @@ categories: Haskell
 title: Some notes in Haskell
 ---
 
+# Lazy Evaluation
+
 # Functor
+
+### What's the definition of Functor?
+
+*Functor* is a type class, the definition of Functor is:
+
+```haskell
+class Functor f where 
+	fmap :: (a -> b) -> f a -> f b
+```
+
+**Each Functor *f* is a type (type constructor) with exactly one type slot**. 
+
+The operator that Functor *f* support is `fmap`.
 
 ### `Instance Functor Maybe` or `Instance Functor (Maybe m)`?
 
@@ -96,7 +111,22 @@ the result is 5 + (5 + 3) = 13.
 
 # Applicative Functor
 
-### How to understand in functions as applicatives, `(+) <$> (+3) <*> (*100) $ 5 ` = 508?
+### What's the definition of Applicative Functor?
+
+*Applicative Functor* is a type class, it is also a Functor, the definition of Applicative Functor is:
+
+```haskell
+class (Functor f) => Applicative f where 
+	pure :: a -> f a 
+	(<*>) :: f (a -> b) -> f a -> f b
+	(<$>) :: (Functor f) => (a -> b) -> f a -> f b 
+```
+
+**Each Applicative Functor *f* is a type (type constructor) with exactly one type slot**. 
+
+The operator that Applicative Functor *f* support is `pure`, `<*>` and `<$> (Just another name for fmap)`.
+
+### How to understand in functions as applicatives using applicative style: `(+) <$> (+3) <*> (*100) $ 5 ` = 508?
 
 We know `(+)` has type: `Num a, a -> a -> a`;
 
@@ -141,7 +171,42 @@ we can simply think this applicative style as first to calculate the value after
 (\x y z -> [x,y,z]) <$> (+3) <*> (*2) <*> (/2) $ 5 = [8.0,10.0,2.5]
 ```
 
+# Monoid
+
+### What's the definition of Monoid?
+
+*Monoid* is a type class, **this type class is for types whose values can be combined together with a binary operation**. The definition of Monoid is:
+
+```haskell
+class Monoid m where 
+	mempty :: m 
+	mappend :: m -> m -> m 
+	mconcat :: [m] -> m 
+```
+
+First, we see that only concrete types can be made instances of Monoid, because the m in the type class definition doesn’t take any type parameters. This is different from Functor and Applicative, which require their instances to be type constructors that take one parameter.
+
+The operator that Monoid *m* support is `mempty`, `mappend` and `mconcat`.
+
 # Monad
+
+### What's the definition of Monad?
+
+*Monad* is a type class, it is also an Applicative Functor, the definition of Monad is:
+
+```haskell
+class Monad m where 
+	return :: a -> m a
+	(>>=) :: m a -> (a -> m b) -> m b
+	(>>) :: m a -> m b -> m b 
+	x >> y = x >>= \_ -> y
+	fail :: String -> m a 
+	fail msg = error msg
+```
+
+**Each Monad *m* is a type (type constructor) with exactly one type slot**. 
+
+The operator that Monad *m* support is `return (Just another pure)`, `>>= (beefed-up <*>)`, `>>` and `fail`.
 
 ### How to understand the implementation of `State s` Monad
 
@@ -168,5 +233,5 @@ stackManip = do
 
 and we execute it with `runState stackManip [5,8,2,1]`. The first state is `[5,8,2,1]`, we pass the state to the `push 3` and a newer state `[3,5,8,2,1]` is generated when it turns to `a <- pop`, and so on.
 
- 
+
 
