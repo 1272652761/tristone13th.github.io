@@ -3,7 +3,7 @@ categories: Haskell
 title: A Monad is just a Monoid in the category of endofunctors
 ---
 
-# 一个单子（Monad）说白了不过就是自函子范畴上的一个幺半群而已，这有什么好纠结的？
+*一个单子（Monad）说白了不过就是自函子范畴上的一个幺半群而已，这有什么好纠结的？*
 
 > 原文地址为 “[*A monad is a monoid in the category of endofunctors, what's the problem?*]( https://www.reddit.com/r/math/comments/ap25mr/a_monad_is_a_monoid_in_the_category_of/ )”，本文为中文翻译版本。
 
