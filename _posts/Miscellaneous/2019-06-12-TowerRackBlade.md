@@ -1,11 +1,7 @@
 ---
-categories: 其他
+categories: Miscellaneous
 title: Tower/Rack/Blade Server之间的区别
 ---
-
-
-
-今天再读论文时注意到了存在三种不同的服务器，它们的名字分别是Tower, Rack, Blade服务器，下面将对这三种服务器之间的区别做简要的介绍。
 
 # Tower Server
 

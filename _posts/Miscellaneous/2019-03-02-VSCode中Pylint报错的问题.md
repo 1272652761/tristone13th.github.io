@@ -1,5 +1,5 @@
 ---
-categories: 其他
+categories: Miscellaneous
 title: VSCode中Pylint报错的问题
 ---
 

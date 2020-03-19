@@ -1,5 +1,5 @@
 ---
-categories: 其他
+categories: Miscellaneous
 title: Ubuntu下多版本Python环境管理
 ---
 

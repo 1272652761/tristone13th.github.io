@@ -1,5 +1,5 @@
 ---
-categories: 其他
+categories: Miscellaneous
 title: Failed to load ldlinux.c32
 ---
 

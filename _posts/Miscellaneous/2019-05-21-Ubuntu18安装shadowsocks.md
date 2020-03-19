@@ -1,5 +1,5 @@
 ---
-categories: 其他
+categories: Miscellaneous
 title: Ubuntu 18.04 LTS 安装Shadowsocks Server搭建代(fan)理(qiang)服务器
 ---
 

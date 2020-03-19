@@ -1,5 +1,5 @@
 ---
-categories: 其他
+categories: Miscellaneous
 title: Ubuntu 18.04 LTS 使用Snap安装Nextcloud文件同步服务器
 ---
 
