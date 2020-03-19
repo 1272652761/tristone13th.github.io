@@ -3,18 +3,6 @@ categories: 编程语言
 title: Lambda calculus
 ---
 
-
-
-
-
-
-
-
-
-
-
-
-
 # 相关文献
 
 [Good Math/Bad Math的Lambda演算系列的中文翻译](http://cgnail.github.io/academic/lambda-index/)

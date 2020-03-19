@@ -5,7 +5,7 @@ title: REINFORCE算法及其变种
 
 # $REINFORCE$算法
 
-我们已知策略梯度$\frac{\partial \mathcal{J}(\theta)}{\partial \theta}​$的计算公式为：
+我们已知策略梯度$\frac{\partial \mathcal{J}(\theta)}{\partial \theta}$的计算公式为：
 
 
 $$
@@ -25,8 +25,8 @@ $$
 
 ## $REINFORCE$算法通用框架：一个示例
 
-![](../../img/reinforce.png)
+![](../../../img/reinforce.png)
 
 # 带基准线的$REINFORCE$算法
 
-$REINFORCE​$算法的一个主要缺点是不同路径之间的方差很大，导致训练不稳定，这是在高维空间中使用蒙特卡罗方法的的通病。一种减少方差的通用方法是引入一个控制变量。
+$REINFORCE$算法的一个主要缺点是不同路径之间的方差很大，导致训练不稳定，这是在高维空间中使用蒙特卡罗方法的的通病。一种减少方差的通用方法是引入一个控制变量。
