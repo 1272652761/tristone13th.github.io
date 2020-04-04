@@ -28,3 +28,11 @@ Let us say you want to clear your terminal using `Ctrl+K`. Then `Clear` is your 
 ### MDP and Finite State Machine
 
 For a pair of specific state and action, the next state is stochastic in MDP and finite in FSM. Actually,  FSM is a sort of MDP named Finite MDP.
+
+### Safety and Security
+
+ One of the primary difference between the two terms is their definition. Security refers to the protection of individuals, organizations, and properties against external threats that are likely to cause harm. It is clear that security is generally focused on ensuring that external factors do not cause trouble or unwelcome situation to the organization, individuals, and the properties within the premises. On the other hand, safety is the feeling of being protected from the factors that causes harm. It is also important to highlight that an individual who controls the risk causing factors has the feeling of being safe.
+
+Reference:
+
+- [Difference Between Safety and Security  | Difference Between](http://www.differencebetween.net/language/words-language/difference-between-safety-and-security/);
