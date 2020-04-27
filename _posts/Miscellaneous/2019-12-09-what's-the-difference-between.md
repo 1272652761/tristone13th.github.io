@@ -35,4 +35,4 @@ For a pair of specific state and action, the next state is stochastic in MDP and
 
 Reference:
 
-- [Difference Between Safety and Security  | Difference Between](http://www.differencebetween.net/language/words-language/difference-between-safety-and-security/);
+- [Difference Between Safety and Security  Difference Between](http://www.differencebetween.net/language/words-language/difference-between-safety-and-security/);
