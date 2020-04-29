@@ -1,9 +1,7 @@
 ---
 categories: 计算机网络
-title: 什么是Queueing Disciplines
+title: Queueing Disciplines
 ---
-
-# 概述
 
 Queueing Disciplines中文名称可以称为排队规则，作为一部分资源分配（Resource Allocation）机制，每一个路由器都应当实现一些排队规则，来**管理当数据包等待被传输时如何被缓存**。不同的排队规则能够被用来控制哪一个包被传输和哪一个包被丢弃。排队规则也影响了一个包的延迟，通过决定一个包需要等待多长被传输。经典的排队规则有：
 
