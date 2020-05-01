@@ -36,3 +36,13 @@ For a pair of specific state and action, the next state is stochastic in MDP and
 Reference:
 
 - [Difference Between Safety and Security  Difference Between](http://www.differencebetween.net/language/words-language/difference-between-safety-and-security/);
+
+###  Replicate & Duplicate 
+
+- A *replicate* is only a reproduction, even if it is not exact;
+- A *duplicate* is an exact copy of something. 
+
+Rederence:
+
+- [Replicate vs. Duplicate – What’s the Difference? - Writing Explained](https://writingexplained.org/replicate-vs-duplicate-difference)
+
