@@ -37,7 +37,7 @@ Reference:
 
 - [Difference Between Safety and Security  Difference Between](http://www.differencebetween.net/language/words-language/difference-between-safety-and-security/);
 
-###  Replicate & Duplicate 
+### Replicate & Duplicate 
 
 - A *replicate* is only a reproduction, even if it is not exact;
 - A *duplicate* is an exact copy of something. 
