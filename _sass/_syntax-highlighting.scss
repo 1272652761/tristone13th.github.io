@@ -1,7 +1,7 @@
 /* Monokai Theme from https://github.com/richleland/pygments-css/blob/master/monokai.css */
 .highlight {
     .hll {
-        background-color: #ecece6
+        background-color: #49483e
     }
 
     .c {
@@ -314,4 +314,9 @@
     }
 
     /* Generic.Inserted & Diff Inserted */
+}
+
+.highlight {
+    background: #272822;
+    color: #f8f8f2
 }
