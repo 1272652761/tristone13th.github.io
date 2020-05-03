@@ -8,9 +8,9 @@
  */
 
 
- /*
+/*
 
- */
+*/
 function TOCize(toc, content, matchHeightTo) {
     if (!(toc && content && matchHeightTo)) return false
 
@@ -270,7 +270,7 @@ function RealLoad() {
     PalmSidebar();
 
     // 此部分用来给代码添加高亮及双击全选的功能
-    SelectAllize("pre.highlight", "Dblclick to select all");
+    SelectAllize("pre.highlight", "Double click to select all");
 
     // 此部分用来处理图片相关操作
     var imgs = document.querySelectorAll('.post-content > p > img');
