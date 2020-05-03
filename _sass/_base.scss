@@ -23,33 +23,27 @@ blockquote {
 	border-left: 10px solid #CCC;
 }
 
-code,
 pre {
 	font-family: $code-font-family;
 	font-size: $code-font-size;
+	background-color: #EEE;
+	padding: 2px 5px;
+	overflow-x: auto;
 }
 
 code {
-	// color: #900;
+	font-family: $code-font-family;
+	font-size: $code-font-size;
 	background-color: #EEE;
-	padding: 0px 5px;
+	padding: 2px 5px;
 	border-radius: 5px;
 }
 
-pre {
-	overflow-x: auto;
-	padding: 20px 50px;
-}
-
-pre,
 pre code {
-	// color: rgb(250, 250, 250);
 	background-color: #EEE;
-}
-
-pre code {
 	padding: 0;
 }
+
 
 .hide {
 	display: none;
