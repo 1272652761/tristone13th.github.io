@@ -22,6 +22,8 @@ title: Message Boundary
 
 > Message boundaries in this context is simply the start & end of the message/packet. With TCP connections, all messages/packets are combined into a continuous stream of data, whereas with UDP the messages are given to you in their original form. They will have an exact size in bytes. 
 
+另一个UDP需要保留消息边界的原因是，UDP是无连接的，这就需要我们从每一次获得的包中解析出发送方的地址，所以我们只能原封不动地把包交付给用户而不是转成字节串。
+
 # 参考文献
 
 - [sockets - What is a message boundary? - Stack Overflow](https://stackoverflow.com/questions/9563563/what-is-a-message-boundary)
