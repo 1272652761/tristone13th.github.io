@@ -1,6 +1,6 @@
 ---
 categories: NS3
-title: TcpL4Protocol内置类
+title: NS3中的TcpL4Protocol类
 ---
 
 官方给出的定义如下：

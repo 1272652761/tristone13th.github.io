@@ -1,6 +1,6 @@
 ---
 categories: NS3
-title: TcpSocketState内置类
+title: NS3中的TcpSocketState类
 ---
 
 官方给出的定义如下：

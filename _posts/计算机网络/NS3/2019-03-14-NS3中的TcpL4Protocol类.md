@@ -1,6 +1,6 @@
 ---
 categories: NS3
-title: OpenGymEnv内置类
+title: NS3中的OpenGymEnv类
 ---
 
 这个类是模拟脚本端的环境类，其继承于`Object`类，定义了以下几个需要被实现的接口。

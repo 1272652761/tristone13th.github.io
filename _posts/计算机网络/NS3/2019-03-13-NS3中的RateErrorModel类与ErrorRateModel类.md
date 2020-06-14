@@ -1,6 +1,6 @@
 ---
 categories: NS3
-title: RateErrorModel内置类与ErrorRateModel内置类
+title: NS3中的RateErrorModel类与ErrorRateModel类
 ---
 
 # RateErrorModel

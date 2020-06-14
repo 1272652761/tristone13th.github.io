@@ -1,6 +1,6 @@
 ---
 categories: NS3
-title: TcpCongestionOps内置类
+title: NS3中的TcpCongestionOps类
 ---
 
 官方给出的定义如下：

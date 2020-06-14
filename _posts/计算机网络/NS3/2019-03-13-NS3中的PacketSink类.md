@@ -1,6 +1,6 @@
 ---
 categories: NS3
-title: PacketSink内置应用层类
+title: NS3中的PacketSink类
 ---
 
 在官方文档中，给出了这样的定义：

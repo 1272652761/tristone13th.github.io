@@ -1,6 +1,6 @@
 ---
 categories: NS3
-title: FlowMonitorHelper内置类
+title: NS3中的FlowMonitorHelper类
 ---
 
 这个类用来允许打开`IP`流监控在一系列节点上。
