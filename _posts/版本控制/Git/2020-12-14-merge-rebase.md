@@ -3,7 +3,7 @@ categories: Git
 title: Merge vs. Rebase
 ---
 
-[Merging vs. Rebasing | Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
+[Merging vs. Rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
 
 > The first thing to understand about `git rebase` is that it solves the same problem as `git merge`. Both of these commands are designed to integrate changes from one branch into another branch—they just do it in very different ways.
 >
