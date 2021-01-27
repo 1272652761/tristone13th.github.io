@@ -10,11 +10,11 @@ Welcome to this website!
 
 # About Me
 
-- Nickname:  雲中君, tristone13th；
-- Where I come from: Handan(Hebei), Xi‘an(Shaanxi), Shanghai;
+- Where: Xi‘an, Shanghai(current);
 - Education: Xidian University(Bachelor), Fudan University(Master Candidate);
-- Foci: CS, SE;
-- Hobbies: Billiard, Football, Classical Chinese, Kun Opera;
+- Publications:
+  - W. Mao, **L. Wang**, J. Zhao and Y. Xu, "Online Fault-tolerant VNF Chain Placement: A Deep Reinforcement Learning Approach," *2020 IFIP Networking Conference (Networking)*, Paris, France, 2020, pp. 163-171.
+  - **L. Wang**, W. Mao, J. Zhao and Y. Xu, "DDQP: A Double Deep Q-Learning Approach to Online Fault-tolerant SFC Placement," in IEEE Transactions on Network and Service Management.
 - Github: [https://github.com/tristone13th](https://github.com/tristone13th);
 - E-mail: [tristone13th@outlook.com](tristone13th@outlook.com);
 - Welcome to have a deep communication with me! 
