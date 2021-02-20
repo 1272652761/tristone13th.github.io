@@ -3,14 +3,12 @@ title: 云中君
 url: "https://tristone13th.github.io"    # the protocol and hostname of your site, eg. `http://laobubu.github.io`
 baseurl: "" # the prefix of your site uri, eg. `"/jekyll-theme-EasyBook"` or empty string `""`
 timezone: Asia/Shanghai
-description: >
-  既见君子，云胡不喜？
 
 # Your information
 # email: tristone13th@outlook.com
-author: 云中君
+author: Lei Wang
 avatar: "../img/avatar.jpg"
-profile: 览冀州兮有余，横四海兮焉穷。
+profile: 求物之妙，如系风捕景，能使是物了然于心者，千万人而不一遇也。
 # twitter_username: twitter_username
 # github_username:  tristone13th
 profile_links:

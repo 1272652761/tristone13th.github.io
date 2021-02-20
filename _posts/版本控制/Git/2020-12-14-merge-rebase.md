@@ -19,7 +19,7 @@ title: Merge vs. Rebase
 2. 上游分支（master）合并下游分支（feather）内容的时候使用 `merge`
 3. 更新当前分支的内容时一定要使用 `--rebase` 参数
 
-**下游分支（feature）要更新上游分支（master）内容的时候使用 `rebase` **。
+**下游分支（feature）要更新上游分支（master）内容的时候使用 `rebase`**。
 
 举个例子：现有上游分支 master，基于 master 分支拉出来一个分支 feature，在 feature 上开发了一段时间后要把 master 分支提交的新内容更新到 feature 分支，此时切换到 feature 分支，使用 git rebase master。
 
