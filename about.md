@@ -19,4 +19,4 @@ Welcome to this website!
 # Publications
 
 - W. Mao, **L. Wang**, J. Zhao and Y. Xu, "Online Fault-tolerant VNF Chain Placement: A Deep Reinforcement Learning Approach," *2020 IFIP Networking Conference (Networking)*, Paris, France, 2020, pp. 163-171.
-- **L. Wang**, W. Mao, J. Zhao and Y. Xu, "DDQP: A Double Deep Q-Learning Approach to Online Fault-tolerant SFC Placement," in IEEE Transactions on Network and Service Management.
+- **L. Wang**, W. Mao, J. Zhao and Y. Xu, "DDQP: A Double Deep Q-Learning Approach to Online Fault-Tolerant SFC Placement," in *IEEE Transactions on Network and Service Management*, vol. 18, no. 1, pp. 118-132, March 2021, doi: 10.1109/TNSM.2021.3049298.
